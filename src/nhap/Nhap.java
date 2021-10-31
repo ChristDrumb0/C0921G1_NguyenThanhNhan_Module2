@@ -2,23 +2,17 @@ package nhap;
 
 public class Nhap {
     public static void main(String[] args) {
-        begin();
-
-        System.out.println("A");
-
-        end();
-
-    }
-
-    static void begin() {
-
-        System.out.println("B");
+        int i = 1;
+        while(i < 5){
+            if(i % 3 != 0){
+                i++;
+                continue;
+            }
+            System.out.println("Hello");
+            i++;
+        }
 
     }
 
-    static void end() {
 
-        System.out.println("C");
-
-    }
 }
