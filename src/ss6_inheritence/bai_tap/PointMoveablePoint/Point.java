@@ -28,9 +28,7 @@ public class Point {
         this.y = y;
     }
     public float[] getXY(){
-
         return new float[]{this.x,this.y};
-
     }
 
     @Override

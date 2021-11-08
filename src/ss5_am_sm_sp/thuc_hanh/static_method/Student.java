@@ -12,8 +12,9 @@ public class Student {
     }
 
     //static method to change the value of static variable
-    static void change() {
-        college = "CODEGYM";
+    static String change() {
+        return college ;
+//                = "CODEGYM";
     }
 
     //method to display values

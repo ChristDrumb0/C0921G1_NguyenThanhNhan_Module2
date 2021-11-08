@@ -12,6 +12,6 @@ public class TestStaticMethod {
         //calling display method
         s1.display();
         s2.display();
-        s3.display();
+        System.out.println(s3.change());
     }
 }
