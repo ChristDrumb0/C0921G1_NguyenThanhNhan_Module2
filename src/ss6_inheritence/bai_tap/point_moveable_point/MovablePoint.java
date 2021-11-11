@@ -1,4 +1,4 @@
-package ss6_inheritence.bai_tap.PointMoveablePoint;
+package ss6_inheritence.bai_tap.point_moveable_point;
 
 public class MovablePoint extends Point{
     private float xSpeed = 0.0f;
@@ -49,9 +49,16 @@ public class MovablePoint extends Point{
                 "))";
     }
 
-    public MovablePoint move(){
+    // return this sẽ thay đổi chính đối tượng đc tạo còn return new sẽ tạo ra một đối tượng mới rỗng
+//    public MovablePoint move(){
+//        this.setX(getX()+xSpeed);
+//        this.setY(getY()+ySpeed);
+//        return this;
+//    }
+    //Có thể sử dụng void
+    public void move(){
         this.setX(getX()+xSpeed);
         this.setY(getY()+ySpeed);
-        return new MovablePoint();
+
     }
 }

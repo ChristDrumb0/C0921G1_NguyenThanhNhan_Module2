@@ -1,4 +1,4 @@
-package ss6_inheritence.bai_tap.PointMoveablePoint;
+package ss6_inheritence.bai_tap.point_moveable_point;
 
 public class MainPointMovablePoint {
     public static void main(String[] args) {

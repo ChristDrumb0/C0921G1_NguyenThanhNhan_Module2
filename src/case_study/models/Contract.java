@@ -10,17 +10,16 @@ public class Contract extends Booking{
 
     }
 
-    public Contract(String bookingId, String contractNumber, int deposit, int totalPayment) {
-        super(bookingId);
+    public Contract(String contractNumber, int deposit, int totalPayment) {
         this.contractNumber = contractNumber;
         this.deposit = deposit;
         this.totalPayment = totalPayment;
 
     }
 
-    public static void main(String[] args) {
-        Contract contract = new Contract();
-        System.out.println(contract.getCustomerId());
-
-    }
+//    public static void main(String[] args) {
+//        Contract contract = new Contract();
+//        System.out.println(contract.getCustomerId());
+//
+//    }
 }

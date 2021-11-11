@@ -1,8 +1,8 @@
-package case_study.controler;
+package case_study.Controller;
 
 import java.util.Scanner;
 
-public class Controller {
+public class MainMenu {
     public void menu() {
         int choice = 0;
         Scanner input = new Scanner(System.in);
