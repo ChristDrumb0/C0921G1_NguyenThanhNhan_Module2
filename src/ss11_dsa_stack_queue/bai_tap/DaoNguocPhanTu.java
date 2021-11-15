@@ -32,9 +32,8 @@ public class DaoNguocPhanTu {
 //        }
 
         System.out.print("reverse Integer: ");
-
-        for (int j : interStack) {
-            System.out.print(j);
+        while (!interStack.isEmpty()){
+            System.out.print(interStack.pop());
         }
 //        for (int j:inter){
 //            System.out.print(j);
@@ -44,7 +43,7 @@ public class DaoNguocPhanTu {
     private static void reverseString(String chars){
 
         char [] char1 = new char[chars.length()];
-        Stack<Character> reverseChars = new Stack<Character>();
+        Stack<Character> reverseChars = new Stack<>();
         for (int i = 0; i < chars.length(); i++) {
             reverseChars.push(chars.charAt(i));
         }

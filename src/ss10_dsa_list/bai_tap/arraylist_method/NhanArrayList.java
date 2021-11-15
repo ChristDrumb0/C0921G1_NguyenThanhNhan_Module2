@@ -1,8 +1,6 @@
 package ss10_dsa_list.bai_tap.arraylist_method;
 
 import java.util.Arrays;
-import java.util.IllegalFormatException;
-import java.util.ArrayList;
 
 public class NhanArrayList<E> {
     //số phần tử trong mảng list (Default = 0)

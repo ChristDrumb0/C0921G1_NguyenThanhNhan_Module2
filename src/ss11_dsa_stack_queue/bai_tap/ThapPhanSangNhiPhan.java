@@ -15,12 +15,13 @@ public class ThapPhanSangNhiPhan {
             number/=2;
 
         }
-//        for (int i : binaryConvert) {
-//            System.out.print(i);
-//        }
-        for (int i = binaryConvert.size()-1; i >0 ; i--) {
-            System.out.print(binaryConvert.get(i));
+
+        while(!binaryConvert.isEmpty()){
+            System.out.print(binaryConvert.pop());
         }
+//        for (int i = binaryConvert.size()-1; i >0 ; i--) {
+//            System.out.print(binaryConvert.get(i));
+//        }
 
     }
 }
