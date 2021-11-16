@@ -67,7 +67,7 @@ public class ThietKeMenu {
                         for (int j = 0; j < 9; j++) {
                             System.out.print("*");
                         }
-                        System.out.println("");
+                        System.out.println();
                     }
                     break;
                 case 0:

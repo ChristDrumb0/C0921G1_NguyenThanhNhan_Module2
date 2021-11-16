@@ -1,11 +1,9 @@
 package ss11_dsa_stack_queue.bai_tap.demerging;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
-public class Main {
+public class Main{
 
     public static void main(String[] args) {
         ArrayList<Data> dataList = new ArrayList<>();
@@ -13,7 +11,13 @@ public class Main {
         dataList.add(new Data("Nguyen Van B", true, LocalDate.of(2005, 4, 5)));
         dataList.add(new Data("Nguyen Thi A", false, LocalDate.of(2010, 3, 10)));
         dataList.add(new Data("Nguyen Thi B", false, LocalDate.of(2002, 5, 20)));
-
+//        Comparator compareDOB = new Data();
+        Collections.sort(dataList, new Comparator<Data>() {
+            @Override
+            public int compare(Data o1, Data o2) {
+                return o1.dayOfBirth.compareTo(o2.dayOfBirth);
+            }
+        });
         Queue<Data> nu = new LinkedList<>();
         Queue<Data> nam = new LinkedList<>();
         Queue<Data> outPut = new LinkedList<>();
@@ -34,4 +38,5 @@ public class Main {
         }
 
     }
+
 }
