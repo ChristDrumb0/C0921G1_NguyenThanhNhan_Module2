@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ProductManagerment pM = new ProductManagerment();
         while (true) {
             System.out.println("Menu");
             System.out.println("1. Add Product");
@@ -22,26 +23,26 @@ public class Menu {
                     System.exit(0);
                     break;
                 case 1:
-                    ProductManagerment.addProduct();
+                    pM.addProduct();
                     break;
                 case 2:
-                    ProductManagerment.deleteProduct();
+                    pM.deleteProduct();
                     break;
                 case 3:
-                    ProductManagerment.editProduct();
+                    pM.editProduct();
                     break;
                 case 4:
-                    ProductManagerment.displayProduct();
+                    pM.displayProduct();
                     break;
                 case 5:
-                    ProductManagerment.searchProduct();
+                    pM.searchProduct();
                     break;
                 case 6:
-//                    ProductManagerment.sortProductByPriceUp();
-                    System.out.println("Bảo trì");
+                    pM.priceUp();
+//                    System.out.println("Bảo trì");
                     break;
                 case 7:
-                    ProductManagerment.sortProductByPriceDown();
+                    pM.priceDown();
                     break;
                 default:
                     System.out.println("Please enter again !");

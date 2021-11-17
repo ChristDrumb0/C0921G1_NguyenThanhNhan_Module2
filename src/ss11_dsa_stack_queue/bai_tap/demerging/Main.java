@@ -9,9 +9,11 @@ public class Main{
         ArrayList<Data> dataList = new ArrayList<>();
         dataList.add(new Data("Nguyen Van A", true, LocalDate.of(2000, 2, 25)));
         dataList.add(new Data("Nguyen Van B", true, LocalDate.of(2005, 4, 5)));
-        dataList.add(new Data("Nguyen Thi A", false, LocalDate.of(2010, 3, 10)));
-        dataList.add(new Data("Nguyen Thi B", false, LocalDate.of(2002, 5, 20)));
-//        Comparator compareDOB = new Data();
+        dataList.add(new Data("Nguyen Thi A", false, LocalDate.of(2008, 3, 10)));
+        dataList.add(new Data("Nguyen Thi B", false, LocalDate.of(2001, 5, 20)));
+        dataList.add(new Data("Nguyen Thi C", false, LocalDate.of(2000, 5, 20)));
+        dataList.add(new Data("Nguyen Thi D", false, LocalDate.of(2009, 5, 20)));
+//        Comparator compareDOB = new DataComparator();
         Collections.sort(dataList, new Comparator<Data>() {
             @Override
             public int compare(Data o1, Data o2) {
