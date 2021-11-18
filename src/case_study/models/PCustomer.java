@@ -1,7 +1,9 @@
 package case_study.models;
 
+import java.time.LocalDate;
+
 public class PCustomer extends Person{
-    protected String customerId = "7";
+    protected String customerId;
     private String[] customerType = {"Diamond", "Platinum", "Gold", "Silver", "Member"};
     private String customerAddress;
 
@@ -14,8 +16,8 @@ public class PCustomer extends Person{
         this.customerAddress = customerAddress;
     }
 
-    public PCustomer(String name, String birthDay, boolean gender, String idNumber, long phoneNumber, String email, String customerId, String[] customerType, String customerAddress) {
-        super(name, birthDay, gender, idNumber, phoneNumber, email);
+    public PCustomer(String customerId, String name, LocalDate dayOfBirth, boolean gender, String personalId, String phoneNumber, String email, String[] customerType, String customerAddress) {
+        super(name, dayOfBirth, gender, personalId, phoneNumber, email);
         this.customerId = customerId;
         this.customerType = customerType;
         this.customerAddress = customerAddress;

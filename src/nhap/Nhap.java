@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Nhap {
-//    static int solution(String inputStr) {
+    //    static int solution(String inputStr) {
 //        String[] character = inputStr.split("");
 //        ArrayList array = new ArrayList<>();
 //        int count =0;
@@ -17,25 +17,41 @@ public class Nhap {
 //        }
 //        return array.size();
 //    }
-    public static int solution(String inputStr)
-    {
-        Set<String> result = new HashSet<>();
 
-        for (int i = 0; i < inputStr.length(); i++) {
-            for (int j = i + 1; j <= inputStr.length(); j++) {
+    int studyLevel;
 
-                result.add(inputStr.substring(i, j));
-            }
-        }
-
-        return result.size();
+    public Nhap(int studyLevel) {
+        this.studyLevel = studyLevel;
     }
 
-    // Driver Code
-    public static void main(String[] args)
-    {
-        String inputStr = "abca";
-        System.out.println(solution(inputStr));
+    public String getTest() {
+        switch (studyLevel) {
+            case 1:
+                return "Intermediate";
+            case 2:
+                return "College";
+            case 3:
+                return "University";
+            case 4:
+                return "Post Graduated";
+
+            default:
+                return "-1";
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return "Nhap{" +
+                "studyLevel=" + getTest() +
+                '}';
+    }
+
+    public static void main(String[] args) {
+        Nhap nhap = new Nhap(2);
+        System.out.println(nhap);
+
     }
 }
 

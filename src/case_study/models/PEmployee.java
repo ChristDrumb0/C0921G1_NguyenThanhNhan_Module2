@@ -1,30 +1,29 @@
 package case_study.models;
 
+import java.time.LocalDate;
+import java.util.Arrays;
+
 public class PEmployee extends Person{
-    private String employeeId;
-    private String[] StudyLevel = {"Intermediate","College","University","Post Graduated"};
-    private String[] position = {"Reception","Waiter", "Executive", "Supervisors", "Managers", "Directors"};
-    private int salary;
+    String employeeId;
+
+    int studyLevel;
+    int position;
+
+    int salary;
 
     public PEmployee() {
     }
 
-    public PEmployee(String employeeId, String[] studyLevel, String[] position, int salary) {
+
+    public PEmployee(String employeeId, String name, LocalDate dayOfBirth, boolean gender, String idNumber, String phoneNumber, String email, int studyLevel, int position, int salary) {
+        super(name, dayOfBirth, gender, idNumber, phoneNumber, email);
         this.employeeId = employeeId;
-        StudyLevel = studyLevel;
+        this.studyLevel = studyLevel;
         this.position = position;
         this.salary = salary;
     }
 
-    public PEmployee(String name, String birthDay, boolean gender, String idNumber, long phoneNumber, String email, String employeeId, String[] studyLevel, String[] position, int salary) {
-        super(name, birthDay, gender, idNumber, phoneNumber, email);
-        this.employeeId = employeeId;
-        StudyLevel = studyLevel;
-        this.position = position;
-        this.salary = salary;
-    }
-
-    public String getEmployeeCode() {
+    public String getEmployeeId() {
         return employeeId;
     }
 
@@ -32,19 +31,50 @@ public class PEmployee extends Person{
         this.employeeId = employeeId;
     }
 
-    public String[] getStudyLevel() {
-        return StudyLevel;
+    public String getStudyLevel() {
+        switch (studyLevel){
+            //    private String[] StudyLevel = {"Intermediate","College","University","Post Graduated"};
+            case 1:
+                return "Intermediate";
+            case 2:
+                return "College";
+            case 3:
+                return "University";
+            case 4:
+                return "Post Graduated";
+
+            default:
+                return "-1";
+        }
+
     }
 
-    public void setStudyLevel(String[] studyLevel) {
-        StudyLevel = studyLevel;
+    public void setStudyLevel(int studyLevel) {
+        this.studyLevel = studyLevel;
     }
 
-    public String[] getPosition() {
-        return position;
+    public String getPosition() {
+        //    = {"Reception","Waiter", "Executive", "Supervisors", "Managers", "Directors"};
+        switch (position){
+            case 1:
+                return "Reception";
+            case 2:
+                return "Waiter";
+            case 3:
+                return "Executive";
+            case 4:
+                return "Supervisors";
+            case 5:
+                return "Managers";
+            case 6:
+                return "Directors";
+
+            default:
+                return "-1";
+        }
     }
 
-    public void setPosition(String[] position) {
+    public void setPosition(int position) {
         this.position = position;
     }
 
@@ -54,5 +84,20 @@ public class PEmployee extends Person{
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "employeeId: '" + employeeId + '\'' +
+                ", name: '" + name + '\'' +
+                ", dayOfBirth: " + dayOfBirth +
+                ", gender: " + getGender() +
+                ", personalId: '" + personalId + '\'' +
+                ", phoneNumber: " + phoneNumber +
+                ", email: '" + email + '\'' +
+                ", StudyLevel=" + getStudyLevel() +
+                ", position=" + getPosition() +
+                ", salary=" + salary +
+                '.';
     }
 }

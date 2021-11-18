@@ -17,9 +17,5 @@ public class Contract extends Booking{
 
     }
 
-//    public static void main(String[] args) {
-//        Contract contract = new Contract();
-//        System.out.println(contract.getCustomerId());
-//
-//    }
+
 }

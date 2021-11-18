@@ -1,8 +1,11 @@
 package case_study.controller;
 
+import case_study.services.EmployeeService;
+
 import java.util.Scanner;
 
 public class MainMenu {
+    EmployeeController employee = new EmployeeController();
     public void menu() {
         int choice = 0;
         Scanner input = new Scanner(System.in);
@@ -29,7 +32,7 @@ public class MainMenu {
                         switch (choice) {
                             case 1:
                                 System.out.println("***********************");
-                                System.out.println("Employee Management");
+                                employee.displayEmployee();
                                 System.out.println("***********************");
                                 break;
                             case 2:

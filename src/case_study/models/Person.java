@@ -1,21 +1,21 @@
 package case_study.models;
-
+import java.time.LocalDate;
 public abstract class Person {
-    private String name;
-    private String birthDay;
-    private boolean gender;
-    private String idNumber;
-    private long phoneNumber;
-    private String email;
+    String name;
+    LocalDate dayOfBirth;
+    boolean gender;
+    String personalId;
+    String phoneNumber;
+    String email;
 
     public Person() {
     }
 
-    public Person(String name, String birthDay, boolean gender, String idNumber, long phoneNumber, String email) {
+    public Person(String name, LocalDate dayOfBirth, boolean gender, String personalId, String phoneNumber, String email) {
         this.name = name;
-        this.birthDay = birthDay;
+        this.dayOfBirth = dayOfBirth;
         this.gender = gender;
-        this.idNumber = idNumber;
+        this.personalId = personalId;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
@@ -28,16 +28,23 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getBirthDay() {
-        return birthDay;
+    public LocalDate getBirthDay() {
+        return dayOfBirth;
     }
 
-    public void setBirthDay(String birthDay) {
-        this.birthDay = birthDay;
+    public void setBirthDay(LocalDate dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
     }
 
-    public boolean isGender() {
+    public boolean isMale() {
         return gender;
+    }
+
+    public String getGender(){
+        if (!isMale()) {
+            return "Female";
+        }
+        return "Male";
     }
 
     public void setGender(boolean gender) {
@@ -45,18 +52,18 @@ public abstract class Person {
     }
 
     public String getIdNumber() {
-        return idNumber;
+        return personalId;
     }
 
-    public void setIdNumber(String idNumber) {
-        this.idNumber = idNumber;
+    public void setIdNumber(String personalId) {
+        this.personalId = personalId;
     }
 
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -66,5 +73,17 @@ public abstract class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Person:" +
+                "name: '" + name + '\'' +
+                ", dayOfBirth: " + dayOfBirth +
+                ", gender: " + getGender() +
+                ", personalId: '" + personalId + '\'' +
+                ", phoneNumber: " + phoneNumber +
+                ", email: '" + email + '\'' +
+                '.';
     }
 }
