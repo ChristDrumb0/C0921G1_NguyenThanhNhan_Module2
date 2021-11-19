@@ -15,8 +15,8 @@ public class PEmployee extends Person{
     }
 
 
-    public PEmployee(String employeeId, String name, LocalDate dayOfBirth, boolean gender, String idNumber, String phoneNumber, String email, int studyLevel, int position, int salary) {
-        super(name, dayOfBirth, gender, idNumber, phoneNumber, email);
+    public PEmployee(String employeeId, String name, LocalDate dayOfBirth, boolean gender, String personalId, String phoneNumber, String email, int studyLevel, int position, int salary) {
+        super(name, dayOfBirth, gender, personalId, phoneNumber, email);
         this.employeeId = employeeId;
         this.studyLevel = studyLevel;
         this.position = position;
@@ -44,7 +44,7 @@ public class PEmployee extends Person{
                 return "Post Graduated";
 
             default:
-                return "-1";
+                return "";
         }
 
     }
@@ -70,7 +70,7 @@ public class PEmployee extends Person{
                 return "Directors";
 
             default:
-                return "-1";
+                return "";
         }
     }
 

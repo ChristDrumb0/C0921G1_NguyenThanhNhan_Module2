@@ -37,7 +37,7 @@ public class MainMenu {
                                 break;
                             case 2:
                                 System.out.println("***********************");
-                                System.out.println("Add new employee");
+                                employee.addEmployee();
                                 System.out.println("***********************");
                                 break;
                             case 3:

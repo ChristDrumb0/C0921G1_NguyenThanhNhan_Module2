@@ -1,8 +1,9 @@
 package ss15_debug.bai_tap;
 
+import java.util.Objects;
 import java.util.Scanner;
 
-public class Triangle {
+public class Triangle extends Object{
     private int a;
     private int b;
     private int c;
@@ -20,6 +21,7 @@ public class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
+
     }
 
     public static void main(String[] args) {
