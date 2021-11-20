@@ -3,31 +3,46 @@ package review.models;
 import java.time.LocalDate;
 
 public class Fresher extends Candidate{
-    LocalDate graduate;
+    int graduateDate;
     int rank;
     String school;
 
     public Fresher() {
     }
 
-    public Fresher(String candidateId, String firstName, String lastName, LocalDate dayOfBirth,
-                   String address, String phone, String email, int type, LocalDate graduate, int rank, String school) {
+    public Fresher(String candidateId, String firstName, String lastName, int dayOfBirth,
+                   String address, String phone, String email, int type, int graduateDate, int rank, String school) {
         super(candidateId, firstName, lastName, dayOfBirth, address, phone, email, type);
-        this.graduate = graduate;
+        this.graduateDate = graduateDate;
         this.rank = rank;
         this.school = school;
     }
 
-    public LocalDate getGraduate() {
-        return graduate;
+    public int getGraduate() {
+        return graduateDate;
     }
 
-    public void setGraduate(LocalDate graduate) {
-        this.graduate = graduate;
+    public void setGraduate(int graduateDate) {
+        this.graduateDate = graduateDate;
     }
 
     public int getRank() {
         return rank;
+    }
+
+    private String toRank(){
+        switch (getRank()){
+            case 1:
+                return "Excellence";
+            case 2:
+                return "Good";
+            case 3:
+                return "Fair";
+            case 4:
+                return "Poor";
+            default:
+                return "";
+        }
     }
 
     public void setRank(int rank) {
@@ -44,18 +59,17 @@ public class Fresher extends Candidate{
 
     @Override
     public String toString() {
-        return "Fresher Candidate{" +
-                "graduate: " + graduate +
-                ", rank: " + rank +
-                ", Graduate at: '" + school + '\'' +
-                ", candidateId: '" + candidateId + '\'' +
-                ", firstName: '" + firstName + '\'' +
-                ", lastName: '" + lastName + '\'' +
+        return "Candidate: " +
+                "Id: '" + candidateId + '\'' +
+                ", name: '" + firstName +" "+ lastName + '\'' +
                 ", dayOfBirth: '" + dayOfBirth +'\'' +
                 ", address: '" + address + '\'' +
                 ", phone: '" + phone + '\'' +
                 ", email: '" + email + '\'' +
-                ", type: '" + type + '\'' +
+                ", type: '" + candidateType() + '\'' +
+                ", year of graduate: " + graduateDate +
+                ", rank: " + toRank() +
+                ", Graduate at: '" + school + '\'' +
                 '.';
     }
 }

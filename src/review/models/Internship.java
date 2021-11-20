@@ -11,7 +11,8 @@ public class Internship extends Candidate{
 
     }
 
-    public Internship(String candidateId, String firstName, String lastName, LocalDate dayOfBirth, String address, String phone, String email, int type, String major, String semester, String schooling) {
+    public Internship(String candidateId, String firstName, String lastName, int dayOfBirth,
+                      String address, String phone, String email, int type, String major, String semester, String schooling) {
         super(candidateId, firstName, lastName, dayOfBirth, address, phone, email, type);
         this.major = major;
         this.semester = semester;
@@ -44,18 +45,17 @@ public class Internship extends Candidate{
 
     @Override
     public String toString() {
-        return "Internship{" +
-                "major: '" + major + '\'' +
-                ", semester: '" + semester + '\'' +
-                ", University:'" + schooling + '\'' +
-                ", candidateId: '" + candidateId + '\'' +
-                ", firstName: '" + firstName + '\'' +
-                ", lastName: '" + lastName + '\'' +
+        return "Candidate: " +
+                "Id: '" + candidateId + '\'' +
+                ", name: '" + firstName +" "+ lastName + '\'' +
                 ", dayOfBirth: '" + dayOfBirth +'\'' +
                 ", address: '" + address + '\'' +
                 ", phone: '" + phone + '\'' +
                 ", email: '" + email + '\'' +
-                ", type: '" + type + '\'' +
+                ", type: '" + candidateType() + '\'' +
+                ", major: '" + major + '\'' +
+                ", semester: '" + semester + '\'' +
+                ", University:'" + schooling + '\'' +
                 '.';
     }
 }

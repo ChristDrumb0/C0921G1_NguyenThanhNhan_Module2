@@ -9,7 +9,7 @@ public class Experienced extends Candidate{
     public Experienced() {
     }
 
-    public Experienced(String candidateId, String firstName, String lastName, LocalDate dayOfBirth,
+    public Experienced(String candidateId, String firstName, String lastName, int dayOfBirth,
                        String address, String phone, String email, int type, int yearsOfExp, String proSkill) {
         super(candidateId, firstName, lastName, dayOfBirth, address, phone, email, type);
         this.yearsOfExp = yearsOfExp;
@@ -34,17 +34,16 @@ public class Experienced extends Candidate{
 
     @Override
     public String toString() {
-        return "Experience Candidate: " +
-                "yearsOfExp: " + yearsOfExp +
-                ", proSkill: '" + proSkill + '\'' +
-                ", candidateId: '" + candidateId + '\'' +
-                ", firstName: '" + firstName + '\'' +
-                ", lastName: '" + lastName + '\'' +
+        return "Candidate: " +
+                "Id: '" + candidateId + '\'' +
+                ", name: '" + firstName +" "+ lastName + '\'' +
                 ", dayOfBirth: '" + dayOfBirth +'\'' +
                 ", address: '" + address + '\'' +
                 ", phone: '" + phone + '\'' +
                 ", email: '" + email + '\'' +
-                ", type: '" + type + '\'' +
+                ", type: '" + candidateType() + '\'' +
+                ", yearsOfExp: " + yearsOfExp +
+                ", proSkill: '" + proSkill + '\'' +
                 '.';
     }
 

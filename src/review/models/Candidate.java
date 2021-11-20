@@ -7,7 +7,7 @@ public class Candidate {
     String candidateId;
     String firstName;
     String lastName;
-    LocalDate dayOfBirth;
+    int dayOfBirth;
     String address;
     String phone;
     String email;
@@ -16,7 +16,7 @@ public class Candidate {
     public Candidate() {
     }
 
-    public Candidate(String candidateId, String firstName, String lastName, LocalDate dayOfBirth,
+    public Candidate(String candidateId, String firstName, String lastName, int dayOfBirth,
                      String address, String phone, String email, int type) {
         this.candidateId = candidateId;
         this.firstName = firstName;
@@ -52,11 +52,11 @@ public class Candidate {
         this.lastName = lastName;
     }
 
-    public LocalDate getDayOfBirth() {
+    public int getDayOfBirth() {
         return dayOfBirth;
     }
 
-    public void setDayOfBirth(LocalDate dayOfBirth) {
+    public void setDayOfBirth(int dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
     }
 
@@ -108,13 +108,12 @@ public class Candidate {
     @Override
     public String toString() {
         return "candidateId: '" + candidateId + '\'' +
-                ", firstName: '" + firstName + '\'' +
-                ", lastName: '" + lastName + '\'' +
+                ", name: '" + firstName +" "+ lastName + '\'' +
                 ", dayOfBirth: '" + dayOfBirth +'\'' +
                 ", address: '" + address + '\'' +
                 ", phone: '" + phone + '\'' +
                 ", email: '" + email + '\'' +
-                ", type: '" + type + '\'' +
+                ", type: '" + candidateType() + '\'' +
                 '.';
     }
 
