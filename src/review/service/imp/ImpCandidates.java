@@ -9,6 +9,11 @@ import review.service.FresherService;
 import review.service.InternService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
+import static java.util.Collections.binarySearch;
 
 public class ImpCandidates implements ExpertService , FresherService , InternService {
     ArrayList<Candidate> candidates = new ArrayList<>();
@@ -35,15 +40,28 @@ public class ImpCandidates implements ExpertService , FresherService , InternSer
     }
 
     public void displayCandidates(){
+        Collections.sort(candidates,new CompareById());
         for (Candidate can : candidates) {
             System.out.println(can);
         }
     }
 
-    public static void main(String[] args) {
-        ImpCandidates candidates = new ImpCandidates();
-        candidates.displayCandidates();
+    public String searchCans(String canId){
+//        Collections.sort(candidates,new CompareById());
+        for (Candidate cans :candidates) {
+            if(cans.getCandidateId().equals(canId)){
+                return cans.toString();
+            }
+
+        }
+        return "unavailable";
+
     }
+
+//    public static void main(String[] args) {
+//        ImpCandidates candidates = new ImpCandidates();
+//        candidates.displayCandidates();
+//    }
 
 //    @Override
 //    public void deleteExpert() {
