@@ -1,4 +1,4 @@
-package ss16_io_text_file.thuc_hanh;
+package ss16_io_text_file.thuc_hanh.calculate;
 
 import java.io.BufferedReader;
 import java.io.File;

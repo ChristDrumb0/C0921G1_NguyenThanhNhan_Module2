@@ -38,11 +38,15 @@ public class MainMenu {
                             case 2:
                                 System.out.println("***********************");
                                 employee.addEmployee();
+                                System.out.println("Đã thêm thành công");
+                                employee.displayEmployee();
                                 System.out.println("***********************");
                                 break;
                             case 3:
                                 System.out.println("***********************");
-                                System.out.println("Edit employee");
+                                employee.editEmployee();
+                                System.out.println("Đã sửa thành công");
+                                employee.displayEmployee();
                                 System.out.println("***********************");
                                 break;
                             case 4:

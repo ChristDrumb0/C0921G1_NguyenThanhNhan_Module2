@@ -29,18 +29,33 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
     
     @Override
-    public void getEmployID(PEmployee employeeId) {
+    public boolean getEmployID(String employeeId) {
         for (int i = 0; i < employees.size(); i++) {
             if(employees.get(i).getEmployeeId().equals(employeeId)){
-                employees.get(i).getName();
+                return false;
+            }
+            else{
+                return true;
             }
         }
+        return true;
     }
 
-
     @Override
-    public void editEmployee(PEmployee employeeId) {
-
+    public void editEmployee(PEmployee employee) {
+        for (PEmployee emp : employees) {
+            if (emp.getEmployeeId().equals(employee.getEmployeeId())){
+                emp.setName(employee.getName());
+                emp.setBirthDay(employee.getBirthDay());
+                emp.setGender(employee.isMale());
+                emp.setPersonalId(employee.getPersonalId());
+                emp.setPhoneNumber(employee.getPhoneNumber());
+                emp.setEmail(employee.getEmail());
+                emp.setStudyLevel(employee.getLevel());
+                emp.setPosition(employee.getPosi());
+                emp.setSalary(employee.getSalary());
+            }
+        }
     }
 
     @Override

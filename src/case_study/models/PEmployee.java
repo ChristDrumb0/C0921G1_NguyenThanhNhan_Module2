@@ -31,8 +31,12 @@ public class PEmployee extends Person{
         this.employeeId = employeeId;
     }
 
+    public  int getLevel(){
+        return studyLevel;
+    }
+
     public String getStudyLevel() {
-        switch (studyLevel){
+        switch (getLevel()){
             //    private String[] StudyLevel = {"Intermediate","College","University","Post Graduated"};
             case 1:
                 return "Intermediate";
@@ -53,9 +57,12 @@ public class PEmployee extends Person{
         this.studyLevel = studyLevel;
     }
 
+    public int getPosi(){
+        return position;
+    }
     public String getPosition() {
         //    = {"Reception","Waiter", "Executive", "Supervisors", "Managers", "Directors"};
-        switch (position){
+        switch (getPosi()){
             case 1:
                 return "Reception";
             case 2:

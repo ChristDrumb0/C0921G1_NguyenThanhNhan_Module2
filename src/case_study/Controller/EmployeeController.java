@@ -30,7 +30,7 @@ public class EmployeeController {
         String phone = sc.nextLine();
         System.out.println("Nhập email");
         String email = sc.nextLine();
-        System.out.println("Nhập cấp bậc");
+        System.out.println("Nhập học vị");
         int level = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập vị trí làm việc");
         int position = Integer.parseInt(sc.nextLine());
@@ -39,8 +39,40 @@ public class EmployeeController {
         employee = new PEmployee(id,name,dOB,gender,pId,phone,email,level,position,salary);
         employees.addEmployee(employee);
     }
-    public void editEmployee(PEmployee employeeId){
+    public void editEmployee(){
+        String id;
+        while (true){
+            System.out.println("Nhập id");
+            id= sc.nextLine();
+            if (!employees.getEmployID(id)){
+                System.out.println("Đã tìm thấy, vui lóng sửa: ");
+                break;
+            }
+            else{
+                System.out.println("Không tìm thấy trên hệ thống");
+            }
 
+        }
+        System.out.println("Nhập Tên");
+        String name = sc.nextLine();
+        System.out.println("Nhập ngày sinh");
+        LocalDate dOB = LocalDate.parse(sc.nextLine());
+        System.out.println("Nhập giới tính");
+        boolean gender = Boolean.parseBoolean(sc.nextLine());
+        System.out.println("Nhập CMND");
+        String pId = sc.nextLine();
+        System.out.println("Nhập số điện thoại");
+        String phone = sc.nextLine();
+        System.out.println("Nhập email");
+        String email = sc.nextLine();
+        System.out.println("Nhập học vị");
+        int level = Integer.parseInt(sc.nextLine());
+        System.out.println("Nhập vị trí làm việc");
+        int position = Integer.parseInt(sc.nextLine());
+        System.out.println("Nhập mức lương");
+        int salary = Integer.parseInt(sc.nextLine());
+        PEmployee employee= new PEmployee(id,name,dOB,gender,pId,phone,email,level,position,salary);
+        employees.editEmployee(employee);
     }
 
 }

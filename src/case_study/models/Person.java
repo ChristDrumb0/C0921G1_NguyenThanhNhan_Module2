@@ -51,11 +51,11 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public String getIdNumber() {
+    public String getPersonalId() {
         return personalId;
     }
 
-    public void setIdNumber(String personalId) {
+    public void setPersonalId(String personalId) {
         this.personalId = personalId;
     }
 
