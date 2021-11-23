@@ -8,6 +8,7 @@ import review.service.ExpertService;
 import review.service.FresherService;
 import review.service.InternService;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,9 +19,9 @@ import static java.util.Collections.binarySearch;
 public class ImpCandidates implements ExpertService , FresherService , InternService {
     ArrayList<Candidate> candidates = new ArrayList<>();
     {
-       candidates.add(new Experienced("EXP001","Aelbrecht","Stefan",1990,"199 Boluva st.","0505647299","Stefan@gmail.com",0,5,"Art direction"));
-       candidates.add(new Fresher("FRE001","Barbosa","De Souza",2000,"199 st.","0883225275","Souza@gmail.com",1,2019,2,"University of Cambridge"));
-       candidates.add(new Internship("INT001","Maria","Madeleine",2003,"24 Jump st.","0683355934","Madeleine@gmail.com",2,"Bachelor's of Art","3rd year","University of Yale"));
+       candidates.add(new Experienced("EXP001","Aelbrecht","Stefan", LocalDate.of(1990,11,12),"199 Boluva st.","0505647299","Stefan@gmail.com",0,5,"Art direction"));
+       candidates.add(new Fresher("FRE001","Barbosa","De Souza",LocalDate.of(2000,1,22),"199 st.","0883225275","Souza@gmail.com",1,2019,2,"University of Cambridge"));
+       candidates.add(new Internship("INT001","Maria","Madeleine",LocalDate.of(2003,5,30),"24 Jump st.","0683355934","Madeleine@gmail.com",2,"Bachelor's of Art","3rd year","University of Yale"));
     }
 
 
@@ -56,6 +57,14 @@ public class ImpCandidates implements ExpertService , FresherService , InternSer
         }
         return "unavailable";
 
+    }
+    public String searchByName(String name){
+        for (Candidate cansName : candidates){
+            if (cansName.getFirstName().equals(name)||cansName.getLastName().equals(name)){
+                return cansName.toString();
+            }
+        }
+        return "unavailable";
     }
 
 //    public static void main(String[] args) {

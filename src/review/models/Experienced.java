@@ -9,7 +9,7 @@ public class Experienced extends Candidate{
     public Experienced() {
     }
 
-    public Experienced(String candidateId, String firstName, String lastName, int dayOfBirth,
+    public Experienced(String candidateId, String firstName, String lastName, LocalDate dayOfBirth,
                        String address, String phone, String email, int type, int yearsOfExp, String proSkill) {
         super(candidateId, firstName, lastName, dayOfBirth, address, phone, email, type);
         this.yearsOfExp = yearsOfExp;

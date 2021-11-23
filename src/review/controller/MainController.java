@@ -6,6 +6,7 @@ import review.models.Fresher;
 import review.models.Internship;
 import review.service.imp.ImpCandidates;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class MainController {
@@ -37,7 +38,7 @@ public class MainController {
                         System.out.println("input Candidate's last name");
                         String canLName = sc.nextLine();
                         System.out.println("input Candidate's day of birth");
-                        int canDoB = Integer.parseInt(sc.nextLine());
+                        LocalDate canDoB = LocalDate.parse(sc.nextLine());
                         System.out.println("input Candidate's address");
                         String canAddress = sc.nextLine();
                         System.out.println("input Candidate's phone");
@@ -71,7 +72,7 @@ public class MainController {
                         System.out.println("input Candidate's last name");
                         String canLName2 = sc.nextLine();
                         System.out.println("input Candidate's day of birth");
-                        int canDoB2 = Integer.parseInt(sc.nextLine());
+                        LocalDate canDoB2 = LocalDate.parse(sc.nextLine());
                         System.out.println("input Candidate's address");
                         String canAddress2 = sc.nextLine();
                         System.out.println("input Candidate's phone");
@@ -106,7 +107,7 @@ public class MainController {
                         System.out.println("input Candidate's last name");
                         String canLName3 = sc.nextLine();
                         System.out.println("input Candidate's day of birth");
-                        int canDoB3 = Integer.parseInt(sc.nextLine());
+                        LocalDate canDoB3 = LocalDate.parse(sc.nextLine());
                         System.out.println("input Candidate's address");
                         String canAddress3 = sc.nextLine();
                         System.out.println("input Candidate's phone");
@@ -134,7 +135,8 @@ public class MainController {
                     System.out.println("_______________________________");
                     System.out.println("input Candidate Id");
                     String canId = sc.nextLine();
-                    System.out.println(cans.searchCans(canId));
+//                    System.out.println(cans.searchCans(canId));
+                    System.out.println(cans.searchByName(canId));
                     System.out.println("_______________________________");
                     break;
                 case 5:

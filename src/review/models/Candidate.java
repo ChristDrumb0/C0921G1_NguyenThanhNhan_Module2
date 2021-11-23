@@ -3,11 +3,11 @@ package review.models;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Candidate {
+public abstract class  Candidate {
     public String candidateId;
     String firstName;
     String lastName;
-    int dayOfBirth;
+    LocalDate dayOfBirth;
     String address;
     String phone;
     String email;
@@ -16,7 +16,7 @@ public class Candidate {
     public Candidate() {
     }
 
-    public Candidate(String candidateId, String firstName, String lastName, int dayOfBirth,
+    public Candidate(String candidateId, String firstName, String lastName, LocalDate dayOfBirth,
                      String address, String phone, String email, int type) {
         this.candidateId = candidateId;
         this.firstName = firstName;
@@ -52,11 +52,11 @@ public class Candidate {
         this.lastName = lastName;
     }
 
-    public int getDayOfBirth() {
+    public LocalDate getDayOfBirth() {
         return dayOfBirth;
     }
 
-    public void setDayOfBirth(int dayOfBirth) {
+    public void setDayOfBirth(LocalDate dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
     }
 

@@ -10,7 +10,7 @@ public class Fresher extends Candidate{
     public Fresher() {
     }
 
-    public Fresher(String candidateId, String firstName, String lastName, int dayOfBirth,
+    public Fresher(String candidateId, String firstName, String lastName, LocalDate dayOfBirth,
                    String address, String phone, String email, int type, int graduateDate, int rank, String school) {
         super(candidateId, firstName, lastName, dayOfBirth, address, phone, email, type);
         this.graduateDate = graduateDate;

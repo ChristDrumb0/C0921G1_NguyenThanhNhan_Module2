@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class ProductManagerment {
-//    Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
     ArrayList<Product> products = new ArrayList<>();
     {
         products.add(new Product(1, "iPhone 13", 1000));
@@ -24,7 +24,7 @@ public class ProductManagerment {
     }
 
     public void addProduct() {
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter id of product:");
         int idProduct = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter name of product:");
@@ -37,7 +37,7 @@ public class ProductManagerment {
     }
 
     public void editProduct() {
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter id of product:");
         int idProduct = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter new name of product:");
@@ -51,11 +51,14 @@ public class ProductManagerment {
     }
 
     public void deleteProduct() {
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter id of product:");
-        int idProduct = Integer.parseInt(scanner.nextLine());
-        products.remove(idProduct-1);
+        int id= Integer.parseInt(scanner.nextLine());
+        products.remove(id-1);
+
+//        products.removeIf(element -> element.getId() == id);
         displayProduct();
+
     }
 
     public void displayProduct() {
@@ -67,7 +70,7 @@ public class ProductManagerment {
     }
 
     public void searchProduct() {
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter name of product ");
         String nameOfProduct = scanner.nextLine();
         int index = 0;
@@ -102,7 +105,7 @@ public class ProductManagerment {
                 }
             }
         });
-        System.out.println("Sort by prices down:");
+        System.out.println("Sort by prices Up:");
         for (Product product : products) {
             System.out.println(product);
         }

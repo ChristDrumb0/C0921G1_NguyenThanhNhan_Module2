@@ -11,7 +11,7 @@ public class Internship extends Candidate{
 
     }
 
-    public Internship(String candidateId, String firstName, String lastName, int dayOfBirth,
+    public Internship(String candidateId, String firstName, String lastName, LocalDate dayOfBirth,
                       String address, String phone, String email, int type, String major, String semester, String schooling) {
         super(candidateId, firstName, lastName, dayOfBirth, address, phone, email, type);
         this.major = major;

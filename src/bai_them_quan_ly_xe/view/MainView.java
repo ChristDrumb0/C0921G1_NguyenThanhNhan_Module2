@@ -8,6 +8,5 @@ public class MainView {
         AMainController mc = new AMainController();
         mc.Controller();
 
-
     }
 }
