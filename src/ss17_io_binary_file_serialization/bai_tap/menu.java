@@ -13,6 +13,7 @@ public class menu {
             System.out.println("3. Edit Product");
             System.out.println("4. Display Product list");
             System.out.println("5. Find Product by id");
+            System.out.println("6. Save to file");
             System.out.println("0. Exit Menu");
             System.out.println("Enter your choice: ");
             int choice = Integer.parseInt(scanner.nextLine());
@@ -34,6 +35,9 @@ public class menu {
                     break;
                 case 5:
                     pM.searchProduct();
+                    break;
+                case 6:
+                    pM.saveFile();
                     break;
                 default:
                     System.out.println("Please enter again !");
