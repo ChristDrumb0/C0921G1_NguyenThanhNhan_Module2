@@ -38,7 +38,7 @@ public class MainMenu {
                             case 2:
                                 System.out.println("***********************");
                                 employee.addEmployee();
-                                System.out.println("Đã thêm thành công");
+//                                System.out.println("Đã thêm thành công");
                                 employee.displayEmployee();
                                 System.out.println("***********************");
                                 break;

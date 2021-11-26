@@ -2,6 +2,7 @@ package case_study.models;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class PEmployee extends Person{
     String employeeId;
@@ -106,5 +107,18 @@ public class PEmployee extends Person{
                 ", position=" + getPosition() +
                 ", salary=" + salary +
                 '.';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PEmployee employee = (PEmployee) o;
+        return employeeId.equals(employee.employeeId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId);
     }
 }

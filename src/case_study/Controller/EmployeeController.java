@@ -2,16 +2,21 @@ package case_study.controller;
 
 import case_study.models.PEmployee;
 import case_study.services.EmployeeService;
+import case_study.services.Impl.EmployeeIdCompare;
 import case_study.services.Impl.EmployeeServiceImpl;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class EmployeeController {
     EmployeeService employees= new EmployeeServiceImpl();
     Scanner sc = new Scanner(System.in);
+
+
     public void displayEmployee(){
+
         employees.displayEmployee();
     }
     public void addEmployee(){
@@ -30,14 +35,15 @@ public class EmployeeController {
         String phone = sc.nextLine();
         System.out.println("Nhập email");
         String email = sc.nextLine();
-        System.out.println("Nhập học vị");
+        System.out.println("Nhập học vị: 1.Intermediate 2.College 3.University 4.Post Graduated");
         int level = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập vị trí làm việc");
+        System.out.println("Nhập vị trí làm việc: 1.Reception 2.Waiter 3.Executive 4.Supervisors 5.Managers 6.Directors");
         int position = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập mức lương");
         int salary = Integer.parseInt(sc.nextLine());
         employee = new PEmployee(id,name,dOB,gender,pId,phone,email,level,position,salary);
         employees.addEmployee(employee);
+
     }
     public void editEmployee(){
         String id;
