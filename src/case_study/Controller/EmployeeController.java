@@ -2,12 +2,10 @@ package case_study.controller;
 
 import case_study.models.PEmployee;
 import case_study.services.EmployeeService;
-import case_study.services.Impl.EmployeeIdCompare;
 import case_study.services.Impl.EmployeeServiceImpl;
 
 
 import java.time.LocalDate;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class EmployeeController {

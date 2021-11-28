@@ -14,16 +14,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     ArrayList<PEmployee> employees = new ArrayList<>();
 
     {
-        employees.add(new PEmployee("GM001", "Nguyen Van A", LocalDate.of(1980, 01, 20), true, "200293748", "0211456789", "anguyen@gmail.com", 4, 6, 5000));
-        employees.add(new PEmployee("FB001", "Nguyen Van B", LocalDate.of(1996, 02, 21), true, "203457420", "0911456787", "bnguyen@gmail.com", 4, 5, 1500));
-        employees.add(new PEmployee("SL001", "Nguyen Thi C", LocalDate.of(1997, 03, 22), false, "208064821", "0811456788", "cnguyen@gmail.com", 4, 5, 1000));
+        employees.add(new PEmployee("GM002", "Nguyen Van A", LocalDate.of(1980, 01, 20), true, "200293748", "0211456789", "anguyen@gmail.com", 4, 6, 5000));
+        employees.add(new PEmployee("GM001", "Nguyen Van B", LocalDate.of(1996, 02, 21), true, "203457420", "0911456787", "bnguyen@gmail.com", 4, 5, 1500));
+        employees.add(new PEmployee("AL001", "Nguyen Thi C", LocalDate.of(1997, 03, 22), false, "208064821", "0811456788", "cnguyen@gmail.com", 4, 5, 1000));
     }
 
 
     @Override
     public void displayEmployee() {
-
-//        Collections.sort(employees,);
+        SortEmployeeById sortById = new SortEmployeeById();
+        Collections.sort(employees,sortById);
         for (PEmployee e : employees) {
             System.out.println(e);
         }
@@ -91,8 +91,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     }
 
-    @Override
-    public int compare(PEmployee o1, PEmployee o2) {
-        return o1.getEmployeeId().compareTo(o2.getEmployeeId());
-    }
+//    @Override
+//    public int compare(PEmployee o1, PEmployee o2) {
+//        return o1.getEmployeeId().compareTo(o2.getEmployeeId());
+//    }
 }

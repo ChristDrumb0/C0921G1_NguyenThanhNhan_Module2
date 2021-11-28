@@ -4,7 +4,7 @@ import case_study.models.PEmployee;
 
 import java.util.Comparator;
 
-public class EmployeeIdCompare implements Comparator<PEmployee> {
+public class SortEmployeeById implements Comparator<PEmployee> {
     @Override
     public int compare(PEmployee o1, PEmployee o2) {
 
