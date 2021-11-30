@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class MainMenu {
     EmployeeController employee = new EmployeeController();
+    CustomerController customer = new CustomerController();
     public void menu() {
         int choice = 0;
         Scanner input = new Scanner(System.in);
@@ -70,17 +71,18 @@ public class MainMenu {
                         switch (choice) {
                             case 1:
                                 System.out.println("***********************");
-                                System.out.println("Display list facility");
+                                customer.displayCustomer();
                                 System.out.println("***********************");
                                 break;
                             case 2:
                                 System.out.println("***********************");
-                                System.out.println("Add new facility");
+                                customer.addCustomer();
                                 System.out.println("***********************");
                                 break;
                             case 3:
                                 System.out.println("***********************");
-                                System.out.println("Display list facility maintenance");
+                                customer.editCustomer();
+                                System.out.println("Đã sửa thành công");
                                 System.out.println("***********************");
                                 break;
                             case 4:

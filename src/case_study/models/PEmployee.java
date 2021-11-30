@@ -16,7 +16,7 @@ public class PEmployee extends Person{
     }
 
 
-    public PEmployee(String employeeId, String name, LocalDate dayOfBirth, boolean gender, String personalId, String phoneNumber, String email, int studyLevel, int position, int salary) {
+    public PEmployee(String employeeId, String name, LocalDate dayOfBirth, String gender, String personalId, String phoneNumber, String email, int studyLevel, int position, int salary) {
         super(name, dayOfBirth, gender, personalId, phoneNumber, email);
         this.employeeId = employeeId;
         this.studyLevel = studyLevel;
@@ -99,7 +99,7 @@ public class PEmployee extends Person{
         return "employeeId: '" + employeeId + '\'' +
                 ", name: '" + name + '\'' +
                 ", dayOfBirth: " + dayOfBirth +
-                ", gender: " + getGender() +
+                ", gender: " + gender +
                 ", personalId: '" + personalId + '\'' +
                 ", phoneNumber: " + phoneNumber +
                 ", email: '" + email + '\'' +

@@ -1,25 +1,22 @@
 package case_study.controller;
 
-import case_study.models.PEmployee;
-import case_study.services.EmployeeService;
-import case_study.services.Impl.EmployeeServiceImpl;
-
+import case_study.models.PCustomer;
+import case_study.services.CustomerService;
+import case_study.services.Impl.CustomerServiceImpl;
 
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class EmployeeController {
-    EmployeeService employees= new EmployeeServiceImpl();
+public class CustomerController {
+    CustomerService customers = new CustomerServiceImpl();
     Scanner sc = new Scanner(System.in);
 
-
-    public void displayEmployee(){
-
-        employees.displayEmployee();
+    public void displayCustomer() {
+        customers.displayCustomer();
     }
-    public void addEmployee(){
-        PEmployee employee;
-        System.out.println("Nhập id");
+
+    public void addCustomer(){
+        System.out.println("Nhập id khách hàng");
         String id= sc.nextLine();
         System.out.println("Nhập Tên");
         String name = sc.nextLine();
@@ -33,29 +30,25 @@ public class EmployeeController {
         String phone = sc.nextLine();
         System.out.println("Nhập email");
         String email = sc.nextLine();
-        System.out.println("Nhập học vị: 1.Intermediate 2.College 3.University 4.Post Graduated");
-        int level = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập vị trí làm việc: 1.Reception 2.Waiter 3.Executive 4.Supervisors 5.Managers 6.Directors");
-        int position = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập mức lương");
-        int salary = Integer.parseInt(sc.nextLine());
-        employee = new PEmployee(id,name,dOB,gender,pId,phone,email,level,position,salary);
-        employees.addEmployee(employee);
-
+        System.out.println("Nhập loại KH: 1.Diamond 2.Platinum 3.Gold 4.Silver 5.Member");
+        int type = Integer.parseInt(sc.nextLine());
+        System.out.println("Nhập Quốc Gia");
+        String address = sc.nextLine();
+        PCustomer customer = new PCustomer(id,name,dOB,gender,pId,phone,email,type,address);
+        customers.addCustomer(customer);
     }
-    public void editEmployee(){
+    public void editCustomer(){
         String id;
         while (true){
             System.out.println("Nhập id");
             id= sc.nextLine();
-            if (!employees.getEmployID(id)){
+            if (!customers.getCusID(id)){
                 System.out.println("Đã tìm thấy, vui lóng sửa: ");
                 break;
             }
             else{
                 System.out.println("Không tìm thấy trên hệ thống");
             }
-
         }
         System.out.println("Nhập Tên");
         String name = sc.nextLine();
@@ -69,14 +62,14 @@ public class EmployeeController {
         String phone = sc.nextLine();
         System.out.println("Nhập email");
         String email = sc.nextLine();
-        System.out.println("Nhập học vị");
-        int level = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập vị trí làm việc");
-        int position = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập mức lương");
-        int salary = Integer.parseInt(sc.nextLine());
-        PEmployee employee= new PEmployee(id,name,dOB,gender,pId,phone,email,level,position,salary);
-        employees.editEmployee(employee);
+        System.out.println("Nhập loại KH: 1.Diamond 2.Platinum 3.Gold 4.Silver 5.Member");
+        int type = Integer.parseInt(sc.nextLine());
+        System.out.println("Nhập Quốc Gia");
+        String address = sc.nextLine();
+        PCustomer customer = new PCustomer(id,name,dOB,gender,pId,phone,email,type,address);
+        customers.editCustomer(customer);
+
     }
+
 
 }

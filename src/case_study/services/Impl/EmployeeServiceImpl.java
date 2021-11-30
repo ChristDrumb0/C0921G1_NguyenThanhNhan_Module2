@@ -14,9 +14,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     ArrayList<PEmployee> employees = new ArrayList<>();
 
     {
-        employees.add(new PEmployee("GM002", "Nguyen Van A", LocalDate.of(1980, 01, 20), true, "200293748", "0211456789", "anguyen@gmail.com", 4, 6, 5000));
-        employees.add(new PEmployee("GM001", "Nguyen Van B", LocalDate.of(1996, 02, 21), true, "203457420", "0911456787", "bnguyen@gmail.com", 4, 5, 1500));
-        employees.add(new PEmployee("AL001", "Nguyen Thi C", LocalDate.of(1997, 03, 22), false, "208064821", "0811456788", "cnguyen@gmail.com", 4, 5, 1000));
+        employees.add(new PEmployee("GM002", "Nguyen Van A", LocalDate.of(1980, 01, 20), "Nam", "200293748", "0211456789", "anguyen@gmail.com", 4, 6, 5000));
+        employees.add(new PEmployee("GM001", "Nguyen Van B", LocalDate.of(1996, 02, 21), "Nam", "203457420", "0911456787", "bnguyen@gmail.com", 4, 5, 1500));
+        employees.add(new PEmployee("AL001", "Nguyen Thi C", LocalDate.of(1997, 03, 22), "Nữ", "208064821", "0811456788", "cnguyen@gmail.com", 4, 5, 1000));
     }
 
 
@@ -24,8 +24,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void displayEmployee() {
         SortEmployeeById sortById = new SortEmployeeById();
         Collections.sort(employees,sortById);
-        for (PEmployee e : employees) {
-            System.out.println(e);
+        for (PEmployee em : employees) {
+            System.out.println(em);
         }
     }
 
@@ -62,8 +62,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeId().equals(employeeId)) {
                 return false;
-            } else {
-                return true;
             }
         }
         return true;
@@ -75,7 +73,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             if (emp.getEmployeeId().equals(employee.getEmployeeId())) {
                 emp.setName(employee.getName());
                 emp.setBirthDay(employee.getBirthDay());
-                emp.setGender(employee.isMale());
+                emp.setGender(employee.getGender());
                 emp.setPersonalId(employee.getPersonalId());
                 emp.setPhoneNumber(employee.getPhoneNumber());
                 emp.setEmail(employee.getEmail());

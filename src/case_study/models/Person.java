@@ -3,7 +3,7 @@ import java.time.LocalDate;
 public abstract class Person {
     String name;
     LocalDate dayOfBirth;
-    boolean gender;
+    String gender;
     String personalId;
     String phoneNumber;
     String email;
@@ -11,7 +11,7 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String name, LocalDate dayOfBirth, boolean gender, String personalId, String phoneNumber, String email) {
+    public Person(String name, LocalDate dayOfBirth, String gender, String personalId, String phoneNumber, String email) {
         this.name = name;
         this.dayOfBirth = dayOfBirth;
         this.gender = gender;
@@ -36,18 +36,19 @@ public abstract class Person {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public boolean isMale() {
+//    public boolean isMale() {
+//        return gender;
+//    }
+
+    public String getGender(){
+//        if (!isMale()) {
+//            return "Female";
+//        }
+//        return "Male";
         return gender;
     }
 
-    public String getGender(){
-        if (!isMale()) {
-            return "Female";
-        }
-        return "Male";
-    }
-
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -80,7 +81,7 @@ public abstract class Person {
         return "Person:" +
                 "name: '" + name + '\'' +
                 ", dayOfBirth: " + dayOfBirth +
-                ", gender: " + getGender() +
+                ", gender: " + gender +
                 ", personalId: '" + personalId + '\'' +
                 ", phoneNumber: " + phoneNumber +
                 ", email: '" + email + '\'' +

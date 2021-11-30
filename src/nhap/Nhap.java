@@ -17,42 +17,31 @@ public class Nhap {
 //        }
 //        return array.size();
 //    }
-
-    int studyLevel;
-
-    public Nhap(int studyLevel) {
-        this.studyLevel = studyLevel;
-    }
-
-    public String getTest() {
-        switch (studyLevel) {
-            case 1:
-                return "Intermediate";
-            case 2:
-                return "College";
-            case 3:
-                return "University";
-            case 4:
-                return "Post Graduated";
-
-            default:
-                return "-1";
+    private static String solution(int[] a, int[] b) {
+        String str = "";
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+                if (a[i] == b[j]) {
+                    str += b[j];
+                }
+            }
         }
-
-    }
-
-    @Override
-    public String toString() {
-        return "Nhap{" +
-                "studyLevel=" + getTest() +
-                '}';
+        return str;
+//        int[] arr = new int[str.length];
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = Interger.parseInt(str[i]);
+//        }
+//
+//        return arr;
     }
 
     public static void main(String[] args) {
-        Nhap nhap = new Nhap(2);
-        System.out.println(nhap);
+        int[] a = {1,2,3};
+        int[] b = {2,3,4};
+        System.out.println(solution(a,b));
 
     }
+
 }
 
  
