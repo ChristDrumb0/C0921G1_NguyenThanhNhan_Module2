@@ -21,7 +21,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public void displayEmployee() {
+    public void displayService() {
         SortEmployeeById sortById = new SortEmployeeById();
         Collections.sort(employees,sortById);
         for (PEmployee em : employees) {
@@ -30,7 +30,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void addEmployee(PEmployee employee) {
+    public void addService(PEmployee employee) {
         boolean flag = true;
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeId().equals(employee.getEmployeeId())) {
@@ -47,7 +47,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                         flag = false;
                         break;
                     }
-                }
+                }break;
 
             }
         }
@@ -68,7 +68,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void editEmployee(PEmployee employee) {
+    public void editService(PEmployee employee) {
         for (PEmployee emp : employees) {
             if (emp.getEmployeeId().equals(employee.getEmployeeId())) {
                 emp.setName(employee.getName());
@@ -84,10 +84,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
     }
 
-    @Override
-    public void findByAll() {
-
-    }
 
 //    @Override
 //    public int compare(PEmployee o1, PEmployee o2) {

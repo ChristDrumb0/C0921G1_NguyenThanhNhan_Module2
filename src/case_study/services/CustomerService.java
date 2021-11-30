@@ -3,11 +3,11 @@ package case_study.services;
 import case_study.models.PCustomer;
 
 
-public interface CustomerService extends Service{
+public interface CustomerService extends Service<PCustomer>{
 
-    void displayCustomer();
-    void addCustomer(PCustomer customer);
+//    void displayCustomer();
+//    void addCustomer(PCustomer customer);
     boolean getCusID(String customerId);
-    void editCustomer(PCustomer customerId);
+//    void editCustomer(PCustomer customerId);
 
 }

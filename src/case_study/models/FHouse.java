@@ -2,17 +2,17 @@ package case_study.models;
 
 public class FHouse extends Facility{
     private String roomStandard;
-    private double floorsAmount;
+    private int floorsAmount;
 
     public FHouse() {
     }
 
-    public FHouse(String roomStandard, double floorsAmount) {
-        this.roomStandard = roomStandard;
-        this.floorsAmount = floorsAmount;
-    }
+//    public FHouse(String roomStandard, double floorsAmount) {
+//        this.roomStandard = roomStandard;
+//        this.floorsAmount = floorsAmount;
+//    }
 
-    public FHouse(String serviceName, double usableArea, double rentalCost, double capability, String[] rentalType, String roomStandard, double floorsAmount) {
+    public FHouse(String serviceName, double usableArea, double rentalCost, double capability, String rentalType, String roomStandard, int floorsAmount) {
         super(serviceName, usableArea, rentalCost, capability, rentalType);
         this.roomStandard = roomStandard;
         this.floorsAmount = floorsAmount;
@@ -26,11 +26,11 @@ public class FHouse extends Facility{
         this.roomStandard = roomStandard;
     }
 
-    public double getFloorsAmount() {
+    public int getFloorsAmount() {
         return floorsAmount;
     }
 
-    public void setFloorsAmount(double floorsAmount) {
+    public void setFloorsAmount(int floorsAmount) {
         this.floorsAmount = floorsAmount;
     }
 }

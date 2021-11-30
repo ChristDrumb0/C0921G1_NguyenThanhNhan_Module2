@@ -1,4 +1,6 @@
 package case_study.services;
 
-public interface ContactService extends Service{
+import case_study.models.Contract;
+
+public interface ContactService extends Service<Contract> {
 }

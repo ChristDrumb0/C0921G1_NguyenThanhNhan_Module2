@@ -1,21 +1,20 @@
 package case_study.models;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public abstract class Facility {
     private String serviceName;
     private double usableArea;
     private double rentalCost;
     private double capability;
-    private String[] rentalType = {"Villa", "House", "Room"};
+    private String rentalType ;
 
     public Facility() {
     }
 
-    public Facility(String serviceName, String[] rentalType) {
-        this.serviceName = serviceName;
-        this.rentalType = rentalType;
-    }
 
-    public Facility(String serviceName, double usableArea, double rentalCost, double capability, String[] rentalType) {
+    public Facility(String serviceName, double usableArea, double rentalCost, double capability, String rentalType) {
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCost = rentalCost;
@@ -55,14 +54,36 @@ public abstract class Facility {
         this.capability = capability;
     }
 
-    public String[] getRentalType() {
+    public String getRentalType() {
         return rentalType;
     }
 
-    public void setRentalType(String[] rentalType) {
+
+    public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
 
+    @Override
+    public String toString() {
+        return "service: '" + serviceName + '\'' +
+                ", usableArea: " + usableArea +
+                ", rentalCost: " + rentalCost +
+                ", capability: " + capability +
+                ", rentalType: " + rentalType +
+                '.';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Facility facility = (Facility) o;
+        return serviceName.equals(facility.serviceName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(serviceName);
+    }
 }
 

@@ -15,7 +15,7 @@ public class EmployeeController {
 
     public void displayEmployee(){
 
-        employees.displayEmployee();
+        employees.displayService();
     }
     public void addEmployee(){
         PEmployee employee;
@@ -40,7 +40,7 @@ public class EmployeeController {
         System.out.println("Nhập mức lương");
         int salary = Integer.parseInt(sc.nextLine());
         employee = new PEmployee(id,name,dOB,gender,pId,phone,email,level,position,salary);
-        employees.addEmployee(employee);
+        employees.addService(employee);
 
     }
     public void editEmployee(){
@@ -69,14 +69,14 @@ public class EmployeeController {
         String phone = sc.nextLine();
         System.out.println("Nhập email");
         String email = sc.nextLine();
-        System.out.println("Nhập học vị");
+        System.out.println("Nhập học vị: 1.Intermediate 2.College 3.University 4.Post Graduated");
         int level = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập vị trí làm việc");
+        System.out.println("Nhập vị trí làm việc: 1.Reception 2.Waiter 3.Executive 4.Supervisors 5.Managers 6.Directors");
         int position = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập mức lương");
         int salary = Integer.parseInt(sc.nextLine());
         PEmployee employee= new PEmployee(id,name,dOB,gender,pId,phone,email,level,position,salary);
-        employees.editEmployee(employee);
+        employees.editService(employee);
     }
 
 }

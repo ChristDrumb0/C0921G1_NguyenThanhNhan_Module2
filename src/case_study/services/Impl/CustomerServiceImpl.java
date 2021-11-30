@@ -21,7 +21,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void displayCustomer() {
+    public void displayService() {
         SortCustomerById sortById = new SortCustomerById();
         Collections.sort(customers,sortById);
         for (PCustomer cus : customers) {
@@ -30,7 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void addCustomer(PCustomer customer) {
+    public void addService(PCustomer customer) {
         boolean flag = true;
         for (int i = 0; i < customers.size(); i++) {
             if (customers.get(i).getCustomerId().equals(customer.getCustomerId())) {
@@ -47,7 +47,7 @@ public class CustomerServiceImpl implements CustomerService {
                         flag = false;
                         break;
                     }
-                }
+                }break;
 
             }
         }
@@ -68,7 +68,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void editCustomer(PCustomer customer) {
+    public void editService(PCustomer customer) {
         for (PCustomer cus : customers) {
             if (cus.getCustomerId().equals(customer.getCustomerId())) {
                 cus.setName(customer.getName());
@@ -82,8 +82,5 @@ public class CustomerServiceImpl implements CustomerService {
             }
         }
     }
-    @Override
-    public void findByAll() {
 
-    }
 }

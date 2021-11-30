@@ -12,7 +12,7 @@ public class CustomerController {
     Scanner sc = new Scanner(System.in);
 
     public void displayCustomer() {
-        customers.displayCustomer();
+        customers.displayService();
     }
 
     public void addCustomer(){
@@ -35,7 +35,7 @@ public class CustomerController {
         System.out.println("Nhập Quốc Gia");
         String address = sc.nextLine();
         PCustomer customer = new PCustomer(id,name,dOB,gender,pId,phone,email,type,address);
-        customers.addCustomer(customer);
+        customers.addService(customer);
     }
     public void editCustomer(){
         String id;
@@ -67,7 +67,7 @@ public class CustomerController {
         System.out.println("Nhập Quốc Gia");
         String address = sc.nextLine();
         PCustomer customer = new PCustomer(id,name,dOB,gender,pId,phone,email,type,address);
-        customers.editCustomer(customer);
+        customers.editService(customer);
 
     }
 

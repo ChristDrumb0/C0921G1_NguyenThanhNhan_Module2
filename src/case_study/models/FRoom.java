@@ -10,7 +10,7 @@ public class FRoom extends Facility {
         this.serviceIncluded = serviceIncluded;
     }
 
-    public FRoom(String serviceName, double usableArea, double rentalCost, double capability, String[] rentalType, String serviceIncluded) {
+    public FRoom(String serviceName, double usableArea, double rentalCost, double capability, String rentalType, String serviceIncluded) {
         super(serviceName, usableArea, rentalCost, capability, rentalType);
         this.serviceIncluded = serviceIncluded;
     }
