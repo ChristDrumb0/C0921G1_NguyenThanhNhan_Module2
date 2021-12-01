@@ -12,8 +12,8 @@ public class FHouse extends Facility{
 //        this.floorsAmount = floorsAmount;
 //    }
 
-    public FHouse(String serviceName, double usableArea, double rentalCost, double capability, String rentalType, String roomStandard, int floorsAmount) {
-        super(serviceName, usableArea, rentalCost, capability, rentalType);
+    public FHouse(String serviceName,String serviceId, double usableArea, double rentalCost, int capability, String rentalType, String roomStandard, int floorsAmount) {
+        super(serviceName,serviceId, usableArea, rentalCost, capability, rentalType);
         this.roomStandard = roomStandard;
         this.floorsAmount = floorsAmount;
     }
@@ -37,9 +37,8 @@ public class FHouse extends Facility{
     @Override
     public String toString() {
         return super.toString() +
-                ", roomStandard: '" + roomStandard + '\'' +
-                ", floorsAmount: " + floorsAmount +
-                '.';
+                ","+roomStandard +
+                ","+ floorsAmount;
     }
 
 }

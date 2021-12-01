@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public abstract class Facility {
+
     public String serviceName;
+    public String serviceId;
     private double usableArea;
     private double rentalCost;
     private double capability;
@@ -14,8 +16,9 @@ public abstract class Facility {
     }
 
 
-    public Facility(String serviceName, double usableArea, double rentalCost, double capability, String rentalType) {
+    public Facility(String serviceName, String serviceId, double usableArea, double rentalCost, int capability, String rentalType) {
         this.serviceName = serviceName;
+        this.serviceId = serviceId;
         this.usableArea = usableArea;
         this.rentalCost = rentalCost;
         this.capability = capability;
@@ -28,6 +31,14 @@ public abstract class Facility {
 
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
+    }
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
     }
 
     public double getUsableArea() {
@@ -59,18 +70,28 @@ public abstract class Facility {
     }
 
 
+
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
 
     @Override
     public String toString() {
-        return "service: '" + serviceName + '\'' +
-                ", usableArea: " + usableArea +
-                ", rentalCost: " + rentalCost +
-                ", capability: " + capability +
-                ", rentalType: " + rentalType ;
+        return serviceName +
+                ","+ serviceId +
+                ","+ usableArea +
+                ","+ rentalCost +
+                ","+ capability +
+                ","+ rentalType ;
     }
+//    @Override
+//    public String toString() {
+//        return "service: '" + serviceName + '\'' +
+//                ", usableArea: " + usableArea +
+//                ", rentalCost: " + rentalCost +
+//                ", capability: " + capability +
+//                ", rentalType: " + rentalType ;
+//    }
 
     @Override
     public boolean equals(Object o) {

@@ -3,6 +3,7 @@ package case_study.controller;
 import case_study.models.PEmployee;
 import case_study.services.EmployeeService;
 import case_study.services.Impl.EmployeeServiceImpl;
+import case_study.utils.validation.ValidationRegex;
 
 
 import java.time.LocalDate;
@@ -19,13 +20,13 @@ public class EmployeeController {
     }
 
     public void addEmployee(){
+        ValidationRegex valid = new ValidationRegex();
         PEmployee employee;
-        System.out.println("Nhập id");
-        String id= sc.nextLine();
+        String myID = valid.checkIdEmp();
         System.out.println("Nhập Tên");
         String name = sc.nextLine();
         System.out.println("Nhập ngày sinh");
-        LocalDate dOB = LocalDate.parse(sc.nextLine());
+        String dOB = sc.nextLine();
         System.out.println("Nhập giới tính");
         String gender = sc.nextLine();
         System.out.println("Nhập CMND");
@@ -40,7 +41,7 @@ public class EmployeeController {
         int position = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập mức lương");
         int salary = Integer.parseInt(sc.nextLine());
-        employee = new PEmployee(id,name,dOB,gender,pId,phone,email,level,position,salary);
+        employee = new PEmployee(myID,name,dOB,gender,pId,phone,email,level,position,salary);
         employees.addService(employee);
 
     }
@@ -61,7 +62,7 @@ public class EmployeeController {
         System.out.println("Nhập Tên");
         String name = sc.nextLine();
         System.out.println("Nhập ngày sinh");
-        LocalDate dOB = LocalDate.parse(sc.nextLine());
+        String dOB = sc.nextLine();
         System.out.println("Nhập giới tính");
         String gender = sc.nextLine();
         System.out.println("Nhập CMND");

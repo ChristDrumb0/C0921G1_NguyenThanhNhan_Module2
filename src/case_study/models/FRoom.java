@@ -10,8 +10,8 @@ public class FRoom extends Facility {
         this.serviceIncluded = serviceIncluded;
     }
 
-    public FRoom(String serviceName, double usableArea, double rentalCost, double capability, String rentalType, String serviceIncluded) {
-        super(serviceName, usableArea, rentalCost, capability, rentalType);
+    public FRoom(String serviceName,String serviceId, double usableArea, double rentalCost, int capability, String rentalType, String serviceIncluded) {
+        super(serviceName, serviceId,usableArea, rentalCost, capability, rentalType);
         this.serviceIncluded = serviceIncluded;
     }
 
@@ -26,7 +26,6 @@ public class FRoom extends Facility {
     @Override
     public String toString() {
         return super.toString() +
-                ", serviceIncluded: '" + serviceIncluded + '\'' +
-                '.';
+                ","+serviceIncluded;
     }
 }

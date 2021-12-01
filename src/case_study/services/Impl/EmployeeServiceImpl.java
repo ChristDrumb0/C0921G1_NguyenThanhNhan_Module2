@@ -1,23 +1,28 @@
 package case_study.services.Impl;
 
+import case_study.data.dataservice.Reader;
+import case_study.data.dataservice.Writer;
 import case_study.models.PEmployee;
 import case_study.services.EmployeeService;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class EmployeeServiceImpl implements EmployeeService {
     Scanner scanner = new Scanner(System.in);
-    ArrayList<PEmployee> employees = new ArrayList<>();
+    public static final String PATH_FILE = "C:\\Users\\ASUS\\Desktop\\CodeGym\\C0921G1_NguyenThanhNhan\\Module 2\\bai_tap\\C0921G1_NguyenThanhNhan_Module2\\src\\case_study\\data\\dataservice\\emplyee.csv";
+    List<PEmployee> employees = Reader.getEmployee(PATH_FILE);
 
-    {
-        employees.add(new PEmployee("GM002", "Nguyen Van A", LocalDate.of(1980, 01, 20), "Nam", "200293748", "0211456789", "anguyen@gmail.com", 4, 6, 5000));
-        employees.add(new PEmployee("GM001", "Nguyen Van B", LocalDate.of(1996, 02, 21), "Nam", "203457420", "0911456787", "bnguyen@gmail.com", 4, 5, 1500));
-        employees.add(new PEmployee("AL001", "Nguyen Thi C", LocalDate.of(1997, 03, 22), "Nữ", "208064821", "0811456788", "cnguyen@gmail.com", 4, 5, 1000));
-    }
+//    List<PEmployee> employees = new ArrayList<>();
+//    {
+//        employees.add(new PEmployee("GM0002", "Nguyen Van A", LocalDate.of(1980, 01, 20), "Nam", "200293748", "0211456789", "anguyen@gmail.com", 4, 6, 5000));
+//        employees.add(new PEmployee("GM0001", "Nguyen Van B", LocalDate.of(1996, 02, 21), "Nam", "203457420", "0911456787", "bnguyen@gmail.com", 4, 5, 1500));
+//        employees.add(new PEmployee("AL0001", "Nguyen Thi C", LocalDate.of(1997, 03, 22), "Nữ", "208064821", "0811456788", "cnguyen@gmail.com", 4, 5, 1000));
+//    }
 
 
     @Override
@@ -40,6 +45,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                     if (yes.equals("y") || yes.equals("Y")) {
                         employees.remove(i);
                         employees.add(employee);
+                        Writer.writeEmployeeToCSV(PATH_FILE, employees,false);
                         System.out.println("Đã cập nhập");
                         flag = false;
                         break;
@@ -53,6 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         if (flag) {
             employees.add(employee);
+            Writer.writeEmployeeToCSV(PATH_FILE, employees,true);
             System.out.println("Thêm mới thành công");
         }
     }
@@ -82,6 +89,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 emp.setSalary(employee.getSalary());
             }
         }
+        Writer.writeEmployeeToCSV(PATH_FILE, employees,false);
     }
 
 

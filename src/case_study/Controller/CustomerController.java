@@ -3,6 +3,7 @@ package case_study.controller;
 import case_study.models.PCustomer;
 import case_study.services.CustomerService;
 import case_study.services.Impl.CustomerServiceImpl;
+import case_study.utils.validation.ValidationRegex;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -10,18 +11,20 @@ import java.util.Scanner;
 public class CustomerController {
     CustomerService customers = new CustomerServiceImpl();
     Scanner sc = new Scanner(System.in);
+    ValidationRegex valid = new ValidationRegex();
 
     public void displayCustomer() {
         customers.displayService();
     }
 
     public void addCustomer(){
-        System.out.println("Nhập id khách hàng");
-        String id= sc.nextLine();
+        ValidationRegex valid = new ValidationRegex();
+        String id = valid.checkIdCus();
+
         System.out.println("Nhập Tên");
         String name = sc.nextLine();
         System.out.println("Nhập ngày sinh");
-        LocalDate dOB = LocalDate.parse(sc.nextLine());
+        String dOB = sc.nextLine();
         System.out.println("Nhập giới tính");
         String gender = sc.nextLine();
         System.out.println("Nhập CMND");
@@ -53,7 +56,7 @@ public class CustomerController {
         System.out.println("Nhập Tên");
         String name = sc.nextLine();
         System.out.println("Nhập ngày sinh");
-        LocalDate dOB = LocalDate.parse(sc.nextLine());
+        String dOB = sc.nextLine();
         System.out.println("Nhập giới tính");
         String gender = sc.nextLine();
         System.out.println("Nhập CMND");

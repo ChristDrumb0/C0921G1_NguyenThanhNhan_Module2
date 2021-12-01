@@ -17,7 +17,7 @@ public class PCustomer extends Person{
 //        this.customerAddress = customerAddress;
 //    }
 
-    public PCustomer(String customerId, String name, LocalDate dayOfBirth, String gender, String personalId, String phoneNumber,
+    public PCustomer(String customerId, String name, String dayOfBirth, String gender, String personalId, String phoneNumber,
                      String email, int customerType, String customerAddress) {
         super(name, dayOfBirth, gender, personalId, phoneNumber, email);
         this.customerId = customerId;
@@ -67,16 +67,28 @@ public class PCustomer extends Person{
 
     @Override
     public String toString() {
-        return "Customer:" +
-                "customerId: '" + customerId + '\'' +
-                ", name: '" + name + '\'' +
-                ", dayOfBirth: " + dayOfBirth +
-                ", gender: " + gender +
-                ", personalId: '" + personalId + '\'' +
-                ", phoneNumber: '" + phoneNumber + '\'' +
-                ", email: '" + email + '\'' +
-                ", customerType: " + typeToString() +
-                ", customerAddress: '" + customerAddress + '\'' +
-                '.';
+        return customerId +
+                "," + name +
+                "," + dayOfBirth +
+                "," + gender +
+                "," + personalId +
+                "," + phoneNumber +
+                "," + email +
+                "," + typeToString() +
+                "," + customerAddress;
     }
+//    @Override
+//    public String toString() {
+//        return "Customer:" +
+//                "customerId: '" + customerId + '\'' +
+//                ", name: '" + name + '\'' +
+//                ", dayOfBirth: " + dayOfBirth +
+//                ", gender: " + gender +
+//                ", personalId: '" + personalId + '\'' +
+//                ", phoneNumber: '" + phoneNumber + '\'' +
+//                ", email: '" + email + '\'' +
+//                ", customerType: " + typeToString() +
+//                ", customerAddress: '" + customerAddress + '\'' +
+//                '.';
+//    }
 }

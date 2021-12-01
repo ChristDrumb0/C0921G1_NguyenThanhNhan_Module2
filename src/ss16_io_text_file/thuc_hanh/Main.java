@@ -27,6 +27,7 @@ public class Main {
             try {
                 if(bufferedWriter != null){
                     bufferedWriter.close();
+                    fileWriter.close();
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();

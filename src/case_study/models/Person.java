@@ -2,7 +2,7 @@ package case_study.models;
 import java.time.LocalDate;
 public abstract class Person {
     String name;
-    LocalDate dayOfBirth;
+    String dayOfBirth;
     String gender;
     String personalId;
     String phoneNumber;
@@ -11,7 +11,7 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String name, LocalDate dayOfBirth, String gender, String personalId, String phoneNumber, String email) {
+    public Person(String name, String dayOfBirth, String gender, String personalId, String phoneNumber, String email) {
         this.name = name;
         this.dayOfBirth = dayOfBirth;
         this.gender = gender;
@@ -28,11 +28,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public LocalDate getBirthDay() {
+    public String getBirthDay() {
         return dayOfBirth;
     }
 
-    public void setBirthDay(LocalDate dayOfBirth) {
+    public void setBirthDay(String dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
     }
 
@@ -78,13 +78,11 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person:" +
-                "name: '" + name + '\'' +
-                ", dayOfBirth: " + dayOfBirth +
-                ", gender: " + gender +
-                ", personalId: '" + personalId + '\'' +
-                ", phoneNumber: " + phoneNumber +
-                ", email: '" + email + '\'' +
-                '.';
+        return "name:'" + name +
+                ",dayOfBirth:" + dayOfBirth +
+                ",gender:" + gender +
+                ",personalId:" + personalId +
+                ",phoneNumber:" + phoneNumber +
+                ",email: '" + email ;
     }
 }

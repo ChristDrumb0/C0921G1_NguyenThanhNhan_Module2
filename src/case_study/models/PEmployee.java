@@ -16,7 +16,8 @@ public class PEmployee extends Person{
     }
 
 
-    public PEmployee(String employeeId, String name, LocalDate dayOfBirth, String gender, String personalId, String phoneNumber, String email, int studyLevel, int position, int salary) {
+    public PEmployee(String employeeId, String name, String dayOfBirth, String gender, String personalId,
+                     String phoneNumber, String email, int studyLevel, int position, int salary) {
         super(name, dayOfBirth, gender, personalId, phoneNumber, email);
         this.employeeId = employeeId;
         this.studyLevel = studyLevel;
@@ -76,7 +77,6 @@ public class PEmployee extends Person{
                 return "Managers";
             case 6:
                 return "Directors";
-
             default:
                 return "";
         }
@@ -96,18 +96,30 @@ public class PEmployee extends Person{
 
     @Override
     public String toString() {
-        return "employeeId: '" + employeeId + '\'' +
-                ", name: '" + name + '\'' +
-                ", dayOfBirth: " + dayOfBirth +
-                ", gender: " + gender +
-                ", personalId: '" + personalId + '\'' +
-                ", phoneNumber: " + phoneNumber +
-                ", email: '" + email + '\'' +
-                ", StudyLevel=" + getStudyLevel() +
-                ", position=" + getPosition() +
-                ", salary=" + salary +
-                '.';
+        return employeeId  +
+                ","+name  +
+                ","+dayOfBirth +
+                ","+gender +
+                ","+personalId +
+                ","+phoneNumber +
+                ","+email +
+                ","+getStudyLevel() +
+                ","+getPosition() +
+                ","+salary;
     }
+//    @Override
+//    public String toString() {
+//        return "employeeId:" + employeeId  +
+//                ",name:" + name  +
+//                ",dayOfBirth:" + dayOfBirth +
+//                ",gender: " + gender +
+//                ",personalId:" + personalId +
+//                ",phoneNumber:" + phoneNumber +
+//                ",email:" + email +
+//                ",StudyLevel:" + getStudyLevel() +
+//                ",position:" + getPosition() +
+//                ",salary:" + salary;
+//    }
 
     @Override
     public boolean equals(Object o) {

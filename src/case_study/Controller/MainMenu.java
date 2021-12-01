@@ -78,12 +78,14 @@ public class MainMenu {
                             case 2:
                                 System.out.println("***********************");
                                 customer.addCustomer();
+                                customer.displayCustomer();
                                 System.out.println("***********************");
                                 break;
                             case 3:
                                 System.out.println("***********************");
                                 customer.editCustomer();
                                 System.out.println("Đã sửa thành công");
+                                customer.displayCustomer();
                                 System.out.println("***********************");
                                 break;
                             case 4:
