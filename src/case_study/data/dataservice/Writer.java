@@ -8,9 +8,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Writer {
-    private static void writeToCSV(String path, List<String> list, boolean append){
+    private static void writeToCSV(String path, List<String> list, boolean append) {
         File file = new File(path);
         FileWriter fWr = null;
         BufferedWriter bWr = null;
@@ -24,8 +26,7 @@ public class Writer {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (bWr != null) {
                     bWr.close();
@@ -36,6 +37,7 @@ public class Writer {
             }
         }
     }
+
     public static void writeEmployeeToCSV(String path, List<PEmployee> employeeList, boolean append) {
         List<String> stringList = new ArrayList<>();
         for (PEmployee employee : employeeList) {
@@ -43,6 +45,7 @@ public class Writer {
         }
         writeToCSV(path, stringList, append);
     }
+
     public static void writeCustomerToCSV(String path, List<PCustomer> customersList, boolean append) {
         List<String> stringList = new ArrayList<>();
         for (PCustomer customer : customersList) {
@@ -50,13 +53,18 @@ public class Writer {
         }
         writeToCSV(path, stringList, append);
     }
-    public static void writeFacilityToCSV(String path, List<Facility> facilityList, boolean append) {
+
+    public static void writeFacilityToCSV(String path, Map<? super Facility, Integer> facilityMap, boolean append) {
         List<String> stringList = new ArrayList<>();
-        for (Facility facility : facilityList) {
-            stringList.add(facility.toString());
+
+        for (Map.Entry<? super Facility, Integer> facility : facilityMap.entrySet()) {
+
+            stringList.add( facility.getKey() + "," + facility.getValue());
+
         }
         writeToCSV(path, stringList, append);
     }
+
     public static void writeBookingToCSV(String path, List<Booking> facilityList, boolean append) {
         List<String> stringList = new ArrayList<>();
         for (Booking booking : facilityList) {
@@ -64,6 +72,7 @@ public class Writer {
         }
         writeToCSV(path, stringList, append);
     }
+
     public static void writeContractToCSV(String path, List<Contract> facilityList, boolean append) {
         List<String> stringList = new ArrayList<>();
         for (Contract contract : facilityList) {

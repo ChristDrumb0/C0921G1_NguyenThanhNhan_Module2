@@ -17,10 +17,10 @@ public class FacilityServiceImpl implements FacilityService {
 //    public Map<? super Facility,Integer> facilityMap = new LinkedHashMap();
 //    {
 //        facilityMap.put(new FRoom("Room","SVRO0001",80,105.7,2,"type","include"),1);
-//        facilityMap.put(new FVilla("Villa","SVVL0001",150,1005.6,9,"type","4 phong", 35,3),5);
+//        facilityMap.put(new FVilla("Villa","SVVL0001",150,1005.6,9,"type","4 phong",35,3),5);
 //        facilityMap.put(new FHouse("House","SVHO0001",120,500.5,9,"type","4 phong",3),7);
 //    }
-    Facility facility;
+
     Scanner sc = new Scanner(System.in);
 
 
@@ -46,24 +46,27 @@ public class FacilityServiceImpl implements FacilityService {
     public void addRoom(Facility facility) {
 
         facilityMap.put(facility,0);
+        Writer.writeFacilityToCSV(PATH_FILE,facilityMap,false);
     }
 
     @Override
     public void addVilla(Facility facility) {
 
         facilityMap.put(facility,0);
+        Writer.writeFacilityToCSV(PATH_FILE,facilityMap,false);
     }
 
     @Override
     public void addHouse(Facility facility) {
 
         facilityMap.put(facility,0);
+        Writer.writeFacilityToCSV(PATH_FILE,facilityMap,false);
     }
 
     @Override
     public void displayService() {
         for (Map.Entry<? super Facility, Integer> entry: facilityMap.entrySet()){
-            System.out.println(entry.getKey() + ", " + entry.getValue());
+            System.out.println(entry.getKey() + "," + entry.getValue());
         }
 
     }
