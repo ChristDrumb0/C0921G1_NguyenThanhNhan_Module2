@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class MainMenu {
     EmployeeController employee = new EmployeeController();
     CustomerController customer = new CustomerController();
+    FacilityController facility = new FacilityController();
     public void menu() {
         int choice = 0;
         Scanner input = new Scanner(System.in);
@@ -106,17 +107,40 @@ public class MainMenu {
                         switch (choice) {
                             case 1:
                                 System.out.println("***********************");
-                                System.out.println("Display list facility");
+                                facility.displayFacility();
                                 System.out.println("***********************");
                                 break;
                             case 2:
-                                System.out.println("***********************");
-                                System.out.println("Add new facility");
+                                int choose = 0;
+                                while (choose!= 4){
+                                    System.out.print("************Add Facility***********\n"+
+                                            "1. Add new Room\n"+
+                                            "2. Add new Villa\n"+
+                                            "3. Add new House\n"+
+                                            "4. Return\n");
+                                   choose = input.nextInt();
+                                   switch (choose){
+                                       case 1:
+                                           facility.addRoom();
+                                           System.out.println("Đã thêm thành công");
+                                           break;
+                                       case 2:
+                                           facility.addVilla();
+                                           System.out.println("Đã thêm thành công");
+                                           break;
+                                       case 3:
+                                           facility.addHouse();
+                                           System.out.println("Đã thêm thành công");
+                                           break;
+                                   }
+
+                                }
+                                facility.displayFacility();
                                 System.out.println("***********************");
                                 break;
                             case 3:
                                 System.out.println("***********************");
-                                System.out.println("Display list facility maintenance");
+                                facility.maintenaceDisplay();
                                 System.out.println("***********************");
                                 break;
                             case 4:

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public abstract class Facility {
-    private String serviceName;
+    public String serviceName;
     private double usableArea;
     private double rentalCost;
     private double capability;
@@ -69,8 +69,7 @@ public abstract class Facility {
                 ", usableArea: " + usableArea +
                 ", rentalCost: " + rentalCost +
                 ", capability: " + capability +
-                ", rentalType: " + rentalType +
-                '.';
+                ", rentalType: " + rentalType ;
     }
 
     @Override

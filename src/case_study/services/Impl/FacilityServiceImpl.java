@@ -9,77 +9,55 @@ import case_study.services.FacilityService;
 import java.util.*;
 
 public class FacilityServiceImpl implements FacilityService {
-    public Map<Facility,Integer> facilityMap = new LinkedHashMap();
+    public Map<? super Facility,Integer> facilityMap = new LinkedHashMap();
     {
-        facilityMap.put(new FRoom("roomName",80,105.7,9,"type","include"),1);
+        facilityMap.put(new FRoom(" RO001 ",80,105.7,2,"type","include"),1);
+        facilityMap.put(new FVilla(" VL001 ",150,1005.6,9,"type","4 phong", 35,3),5);
+        facilityMap.put(new FHouse(" HO001 ",120,500.5,9,"type","4 phong",3),7);
     }
     Facility facility;
     Scanner sc = new Scanner(System.in);
 
 
     @Override
-    public void addRoom() {
-        System.out.println("Nhập tên phòng");
-        String roomName = sc.nextLine();
-        System.out.println("Nhập diện tích sử dụng");
-        double area = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập giá thuê");
-        double rental = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập sức chứa");
-        double capacity = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập loại thuê");
-        String type = sc.nextLine();
-        System.out.println("Nhập dịch vụ đi kèm");
-        String include = sc.nextLine();
-        facility = new FRoom(roomName,area,rental,capacity,type,include);
+    public void displayMaintenance() {
+        for (Map.Entry<? super Facility, Integer> entry: facilityMap.entrySet()){
+            if (entry.getValue() >= 5) {
+                if(entry.getKey() instanceof FRoom){
+                    System.out.println("Phòng" + ((FRoom) entry.getKey()).getServiceName() + " Đã sử dụng "+entry.getValue()+ " lần, cần được 'Bảo Trì' !");
+                }
+                else if(entry.getKey() instanceof FVilla){
+                    System.out.println("Phòng" + ((FVilla) entry.getKey()).getServiceName() + " Đã sử dụng "+entry.getValue()+ " lần, cần được 'Bảo Trì' !");
+                }
+                else if(entry.getKey() instanceof FHouse){
+                    System.out.println("Phòng" + ((FHouse) entry.getKey()).getServiceName() + " Đã sử dụng "+entry.getValue()+ " lần, cần được 'Bảo Trì' !");
+                }
+
+            }
+        }
+    }
+
+    @Override
+    public void addRoom(Facility facility) {
+
         facilityMap.put(facility,0);
     }
 
     @Override
-    public void addVilla() {
-        System.out.println("Nhập tên phòng");
-        String roomName = sc.nextLine();
-        System.out.println("Nhập diện tích sử dụng");
-        double area = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập giá thuê");
-        double rental = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập sức chứa");
-        double capacity = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập loại thuê");
-        String type = sc.nextLine();
-        System.out.println("Nhập tiêu chuẩn phong");
-        String standard = sc.nextLine();
-        System.out.println("Nhập diện tích hồ bơi");
-        double poolArea = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập số tâng");
-        int stories = Integer.parseInt(sc.nextLine());
-        facility = new FVilla(roomName,area,rental,capacity,type,standard,poolArea,stories);
+    public void addVilla(Facility facility) {
+
         facilityMap.put(facility,0);
     }
 
     @Override
-    public void addHouse() {
-        System.out.println("Nhập tên phòng");
-        String roomName = sc.nextLine();
-        System.out.println("Nhập diện tích sử dụng");
-        double area = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập giá thuê");
-        double rental = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập sức chứa");
-        double capacity = Double.parseDouble(sc.nextLine());
-        System.out.println("Nhập loại thuê");
-        String type = sc.nextLine();
-        System.out.println("Nhập tiêu chuẩn phong");
-        String standard = sc.nextLine();
-        System.out.println("Nhập số tâng");
-        int stories = Integer.parseInt(sc.nextLine());
-        facility = new FHouse(roomName,area,rental,capacity,type,standard,stories);
+    public void addHouse(Facility facility) {
+
         facilityMap.put(facility,0);
     }
 
     @Override
     public void displayService() {
-        for (Map.Entry<Facility, Integer> entry: facilityMap.entrySet()){
+        for (Map.Entry<? super Facility, Integer> entry: facilityMap.entrySet()){
             System.out.println(entry.getKey() + ", " + entry.getValue());
         }
 

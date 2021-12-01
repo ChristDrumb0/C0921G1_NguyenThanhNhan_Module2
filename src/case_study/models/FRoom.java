@@ -22,4 +22,11 @@ public class FRoom extends Facility {
     public void setServiceIncluded(String serviceIncluded) {
         this.serviceIncluded = serviceIncluded;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", serviceIncluded: '" + serviceIncluded + '\'' +
+                '.';
+    }
 }
