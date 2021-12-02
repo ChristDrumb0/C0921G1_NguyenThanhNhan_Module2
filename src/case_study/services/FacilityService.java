@@ -5,6 +5,7 @@ import case_study.models.Facility;
 
 public interface FacilityService extends Service<Facility> {
     void displayMaintenance();
+    void addUsingFacility(String idService);
     void addRoom(Facility facility);
     void addVilla(Facility facility);
     void addHouse(Facility facility);

@@ -9,7 +9,7 @@ public abstract class Facility {
     public String serviceId;
     private double usableArea;
     private double rentalCost;
-    private double capability;
+    private int capability;
     private String rentalType ;
 
     public Facility() {
@@ -57,11 +57,11 @@ public abstract class Facility {
         this.rentalCost = rentalCost;
     }
 
-    public double getCapability() {
+    public int getCapability() {
         return capability;
     }
 
-    public void setCapability(double capability) {
+    public void setCapability(int capability) {
         this.capability = capability;
     }
 
@@ -98,12 +98,12 @@ public abstract class Facility {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Facility facility = (Facility) o;
-        return serviceName.equals(facility.serviceName);
+        return serviceId.equals(facility.serviceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceName);
+        return Objects.hash(serviceId);
     }
 }
 

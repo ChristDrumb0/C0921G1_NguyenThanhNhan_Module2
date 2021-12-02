@@ -18,7 +18,7 @@ public class CustomerController {
     }
 
     public void addCustomer(){
-        ValidationRegex valid = new ValidationRegex();
+
         String id = valid.checkIdCus();
 
         System.out.println("Nhập Tên");
@@ -43,8 +43,8 @@ public class CustomerController {
     public void editCustomer(){
         String id;
         while (true){
-            System.out.println("Nhập id");
-            id= sc.nextLine();
+//            System.out.println("Nhập id");
+            id= valid.checkIdCus();
             if (!customers.getCusID(id)){
                 System.out.println("Đã tìm thấy, vui lóng sửa: ");
                 break;

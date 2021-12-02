@@ -14,10 +14,10 @@ import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService {
 
-    public static final String PATH_FILE = "C:\\Users\\ASUS\\Desktop\\CodeGym\\C0921G1_NguyenThanhNhan\\Module 2\\bai_tap\\C0921G1_NguyenThanhNhan_Module2\\src\\case_study\\data\\dataservice\\customer.csv";
+    public static final String CUSTOMER_PATH_FILE = "C:\\Users\\ASUS\\Desktop\\CodeGym\\C0921G1_NguyenThanhNhan\\Module 2\\bai_tap\\C0921G1_NguyenThanhNhan_Module2\\src\\case_study\\data\\dataservice\\customer.csv";
     Scanner scanner = new Scanner(System.in);
 
-    List<PCustomer> customers= Reader.getCustomer(PATH_FILE);
+    List<PCustomer> customers= Reader.getCustomer(CUSTOMER_PATH_FILE);
 //    List<PCustomer> customers = new LinkedList<>();
 //    {
 //        customers.add(new PCustomer("CUS0005", "Nguyen Van A", LocalDate.of(1988, 3, 20), "Nam", "200293748", "0993736458", "anguyen@gmail.com",5,"VN"));
@@ -45,7 +45,7 @@ public class CustomerServiceImpl implements CustomerService {
                     if (yes.equals("y") || yes.equals("Y")) {
                         customers.remove(i);
                         customers.add(customer);
-                        Writer.writeCustomerToCSV(PATH_FILE,customers,false);
+                        Writer.writeCustomerToCSV(CUSTOMER_PATH_FILE,customers,false);
                         System.out.println("Đã cập nhập");
                         flag = false;
                         break;
@@ -59,7 +59,7 @@ public class CustomerServiceImpl implements CustomerService {
         }
         if (flag) {
             customers.add(customer);
-            Writer.writeCustomerToCSV(PATH_FILE,customers,true);
+            Writer.writeCustomerToCSV(CUSTOMER_PATH_FILE,customers,true);
             System.out.println("Thêm mới thành công");
         }
     }
@@ -88,7 +88,7 @@ public class CustomerServiceImpl implements CustomerService {
                 cus.setCustomerAddress(customer.getCustomerAddress());
             }
         }
-        Writer.writeCustomerToCSV(PATH_FILE,customers,false);
+        Writer.writeCustomerToCSV(CUSTOMER_PATH_FILE,customers,false);
     }
 
 }

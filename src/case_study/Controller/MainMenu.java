@@ -1,5 +1,6 @@
 package case_study.controller;
 
+import case_study.models.Booking;
 import case_study.services.EmployeeService;
 
 import java.util.Scanner;
@@ -8,6 +9,7 @@ public class MainMenu {
     EmployeeController employee = new EmployeeController();
     CustomerController customer = new CustomerController();
     FacilityController facility = new FacilityController();
+    BookingController booking = new BookingController();
     public void menu() {
         int choice = 0;
         Scanner input = new Scanner(System.in);
@@ -169,12 +171,13 @@ public class MainMenu {
                         switch (choice) {
                             case 1:
                                 System.out.println("***********************");
-                                System.out.println("Display list facility");
+                                booking.addBooking();
+
                                 System.out.println("***********************");
                                 break;
                             case 2:
                                 System.out.println("***********************");
-                                System.out.println("Add new facility");
+                                booking.displayBooking();
                                 System.out.println("***********************");
                                 break;
                             case 3:

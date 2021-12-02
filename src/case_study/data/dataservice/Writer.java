@@ -6,10 +6,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Writer {
     private static void writeToCSV(String path, List<String> list, boolean append) {
@@ -65,17 +62,24 @@ public class Writer {
         writeToCSV(path, stringList, append);
     }
 
-    public static void writeBookingToCSV(String path, List<Booking> facilityList, boolean append) {
+    public static void writeBookingTree(String path, TreeSet<Booking> bookingTreeSet, boolean append) {
         List<String> stringList = new ArrayList<>();
-        for (Booking booking : facilityList) {
+        for (Booking booking : bookingTreeSet) {
+            stringList.add(booking.toString());
+        }
+        writeToCSV(path, stringList, append);
+    }
+    public static void writeBookingQueue(String path, Queue<Booking> bookingQueue, boolean append) {
+        List<String> stringList = new ArrayList<>();
+        for (Booking booking : bookingQueue) {
             stringList.add(booking.toString());
         }
         writeToCSV(path, stringList, append);
     }
 
-    public static void writeContractToCSV(String path, List<Contract> facilityList, boolean append) {
+    public static void writeContract(String path, TreeSet<Contract> contractS, boolean append) {
         List<String> stringList = new ArrayList<>();
-        for (Contract contract : facilityList) {
+        for (Contract contract : contractS) {
             stringList.add(contract.toString());
         }
         writeToCSV(path, stringList, append);

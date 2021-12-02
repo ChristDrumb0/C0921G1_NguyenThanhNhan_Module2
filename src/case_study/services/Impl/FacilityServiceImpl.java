@@ -11,8 +11,8 @@ import case_study.services.FacilityService;
 import java.util.*;
 
 public class FacilityServiceImpl implements FacilityService {
-    public static final String PATH_FILE = "C:\\Users\\ASUS\\Desktop\\CodeGym\\C0921G1_NguyenThanhNhan\\Module 2\\bai_tap\\C0921G1_NguyenThanhNhan_Module2\\src\\case_study\\data\\dataservice\\facility.csv";
-    public Map<? super Facility,Integer> facilityMap = Reader.getFacility(PATH_FILE);
+    public static final String FACILITY_PATH_FILE = "C:\\Users\\ASUS\\Desktop\\CodeGym\\C0921G1_NguyenThanhNhan\\Module 2\\bai_tap\\C0921G1_NguyenThanhNhan_Module2\\src\\case_study\\data\\dataservice\\facility.csv";
+    public Map<? super Facility,Integer> facilityMap = Reader.getFacility(FACILITY_PATH_FILE);
 
 //    public Map<? super Facility,Integer> facilityMap = new LinkedHashMap();
 //    {
@@ -22,6 +22,16 @@ public class FacilityServiceImpl implements FacilityService {
 //    }
 
     Scanner sc = new Scanner(System.in);
+    @Override
+    public void addUsingFacility(String idService) {
+        Map<Facility, Integer> facilityIntegerMap = Reader.getFacility(FACILITY_PATH_FILE);
+        for (Map.Entry<Facility, Integer> entry : facilityIntegerMap.entrySet()) {
+            if (entry.getKey().getServiceId().equals(idService)) {
+                entry.setValue(entry.getValue() + 1);
+            }
+        }
+        Writer.writeFacilityToCSV(FACILITY_PATH_FILE, facilityIntegerMap, false);
+    }
 
 
     @Override
@@ -42,25 +52,28 @@ public class FacilityServiceImpl implements FacilityService {
         }
     }
 
+
+
     @Override
     public void addRoom(Facility facility) {
 
         facilityMap.put(facility,0);
-        Writer.writeFacilityToCSV(PATH_FILE,facilityMap,false);
+        Writer.writeFacilityToCSV(FACILITY_PATH_FILE,facilityMap,false);
     }
 
     @Override
     public void addVilla(Facility facility) {
 
         facilityMap.put(facility,0);
-        Writer.writeFacilityToCSV(PATH_FILE,facilityMap,false);
+        Writer.writeFacilityToCSV(FACILITY_PATH_FILE,facilityMap,false);
     }
+
 
     @Override
     public void addHouse(Facility facility) {
 
         facilityMap.put(facility,0);
-        Writer.writeFacilityToCSV(PATH_FILE,facilityMap,false);
+        Writer.writeFacilityToCSV(FACILITY_PATH_FILE,facilityMap,false);
     }
 
     @Override

@@ -125,10 +125,10 @@ public class Reader {
                 facility.put(villa, Integer.parseInt(array[9]));
             }
             if (array[0].equals("House")) {
-                Facility house = new FHouse(array[1], array[2], Double.parseDouble(array[3]), Double.parseDouble(array[4]),
-                        Integer.parseInt(array[5]), array[6], array[7],
-                        Integer.parseInt(array[8]));
-                facility.put(house, Integer.parseInt(array[9]));
+                Facility house = new FHouse(array[0], array[1], Double.parseDouble(array[2]), Double.parseDouble(array[3]),
+                        Integer.parseInt(array[4]), array[5], array[6],
+                        Integer.parseInt(array[7]));
+                facility.put(house, Integer.parseInt(array[8]));
             }
             if (array[0].equals("Room")) {
                 Facility room = new FRoom(array[0], array[1], Double.parseDouble(array[2]), Double.parseDouble(array[3]),
@@ -137,6 +137,40 @@ public class Reader {
             }
         }
         return facility;
+    }
 
+    public static TreeSet<Booking> getBooking(String path){
+        List<String> listString = readFromCSV(path);
+        TreeSet<Booking> bookings = new TreeSet<>();
+        for (String s : listString) {
+            String[] array = s.split(",");
+            Booking booking = new Booking(array[0], array[1], array[2], array[3],
+                    array[4], array[5]);
+            bookings.add(booking);
+        }
+        return bookings;
+    }
+
+    public static Queue<Booking> getBookingQueue(String path){
+        List<String> stringList = readFromCSV(path);
+        Queue<Booking> bookingQueue = new LinkedList<>();
+        for (String s : stringList) {
+            String[] array = s.split(",");
+            Booking booking = new Booking(array[0], array[1], array[2], array[3],
+                    array[4], array[5]);
+            bookingQueue.add(booking);
+        }
+        return bookingQueue;
+    }
+    public static TreeSet<Contract> getContractSet(String path){
+        List<String> stringList = readFromCSV(path);
+        TreeSet<Contract> contractSet = new TreeSet<>();
+        for (String s : stringList) {
+            String[] array = s.split(",");
+            Contract contract = new Contract(array[0], Integer.parseInt(array[1])
+                    ,Integer.parseInt(array[2]),array[3],array[4]);
+            contractSet.add(contract);
+        }
+        return contractSet;
     }
 }
