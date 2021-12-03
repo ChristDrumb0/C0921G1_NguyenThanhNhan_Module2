@@ -10,6 +10,7 @@ public class MainMenu {
     CustomerController customer = new CustomerController();
     FacilityController facility = new FacilityController();
     BookingController booking = new BookingController();
+    ContractController contract = new ContractController();
     public void menu() {
         int choice = 0;
         Scanner input = new Scanner(System.in);
@@ -182,17 +183,17 @@ public class MainMenu {
                                 break;
                             case 3:
                                 System.out.println("***********************");
-                                System.out.println("Display list facility maintenance");
+                                contract.addContract();
                                 System.out.println("***********************");
                                 break;
                             case 4:
                                 System.out.println("***********************");
-                                System.out.println("Display list contracts");
+                                contract.displayContract();
                                 System.out.println("***********************");
                                 break;
                             case 5:
                                 System.out.println("***********************");
-                                System.out.println("Edit contracts");
+                                contract.editContract();
                                 System.out.println("***********************");
                                 break;
                             case 6:

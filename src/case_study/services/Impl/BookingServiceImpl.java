@@ -27,6 +27,11 @@ public class BookingServiceImpl implements BookingService {
         return bookingTreeSet;
     }
 
+    public Queue<Booking> getQueueBooking() {
+        return queueBooking;
+    }
+
+
     @Override
     public String getServiceType(String serviceId) {
         try {
@@ -109,7 +114,7 @@ public class BookingServiceImpl implements BookingService {
     public void displayService() {
         TreeSet<Booking> bookingTreeSet = Reader.getBooking(BOOKING_PATH_FILE);
         for (Booking booking : bookingTreeSet) {
-            System.out.println(booking.toString());
+            System.out.println(booking);
         }
 
     }
