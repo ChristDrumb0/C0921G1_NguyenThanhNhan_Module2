@@ -241,7 +241,7 @@ public class MainMenu {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("not a choice");
+                    System.err.println("not a choice");
 
             }
         }

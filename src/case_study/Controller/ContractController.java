@@ -46,12 +46,13 @@ public class ContractController {
         }
         String bookingId = contractS.getQueueBooking().peek().getBookingId();
         System.out.println(bookingId);
-        String customerId = contractS.getQueueBooking().poll().getCustomer();
+        String customerId = contractS.getQueueBooking().peek().getCustomer();
         System.out.println(customerId);
-
+        contractS.getQueueBooking().remove();
+        Writer.writeBookingQueue(BOOKING_QUEUE_PATH,bookingsS.getQueueBooking(),false);
         Contract contract = new Contract(contractId, deposit, payment, bookingId, customerId);
         contractS.addService(contract);
-        Writer.writeBookingQueue(BOOKING_QUEUE_PATH,bookingsS.getQueueBooking(),false);
+
     }
 
     public void displayContract() {
