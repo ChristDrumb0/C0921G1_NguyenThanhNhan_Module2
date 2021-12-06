@@ -1,7 +1,7 @@
 package case_study.services.Impl;
 
-import case_study.data.dataservice.Reader;
-import case_study.data.dataservice.Writer;
+import case_study.utils.Reader;
+import case_study.utils.Writer;
 import case_study.models.FHouse;
 import case_study.models.FRoom;
 import case_study.models.FVilla;

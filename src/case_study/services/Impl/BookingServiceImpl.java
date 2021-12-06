@@ -1,7 +1,7 @@
 package case_study.services.Impl;
 
-import case_study.data.dataservice.Reader;
-import case_study.data.dataservice.Writer;
+import case_study.utils.Reader;
+import case_study.utils.Writer;
 import case_study.models.Booking;
 import case_study.models.Facility;
 import case_study.models.PCustomer;

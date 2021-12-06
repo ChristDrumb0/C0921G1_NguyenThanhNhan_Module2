@@ -1,6 +1,6 @@
 package case_study.controller;
 
-import case_study.data.dataservice.Writer;
+import case_study.utils.Writer;
 import case_study.models.Contract;
 import case_study.services.BookingService;
 import case_study.services.ContractService;
@@ -46,10 +46,10 @@ public class ContractController {
         }
         String bookingId = contractS.getQueueBooking().peek().getBookingId();
         System.out.println(bookingId);
-        String customerId = contractS.getQueueBooking().peek().getCustomer();
+        String customerId = contractS.getQueueBooking().poll().getCustomer();
         System.out.println(customerId);
-        contractS.getQueueBooking().remove();
-        Writer.writeBookingQueue(BOOKING_QUEUE_PATH,bookingsS.getQueueBooking(),false);
+//        contractS.getQueueBooking().remove();
+        Writer.writeBookingQueue(BOOKING_QUEUE_PATH,contractS.getQueueBooking(),false);
         Contract contract = new Contract(contractId, deposit, payment, bookingId, customerId);
         contractS.addService(contract);
 

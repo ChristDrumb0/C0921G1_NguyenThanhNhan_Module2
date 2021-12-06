@@ -1,14 +1,11 @@
 package case_study.services.Impl;
 
-import case_study.data.dataservice.Reader;
-import case_study.data.dataservice.Writer;
+import case_study.utils.Reader;
+import case_study.utils.Writer;
 import case_study.models.PCustomer;
-import case_study.models.PEmployee;
 import case_study.services.CustomerService;
 
-import java.time.LocalDate;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
