@@ -223,22 +223,28 @@ public class ImpAccount implements Services {
 
     @Override
     public void searchService() {
+        while (true) {
+            try {
+                boolean flag = true;
+                while (flag) {
+                    System.out.println("Enter the account id");
+                    int accountId = Integer.parseInt(sc.nextLine());
 
-        boolean flag = true;
-        while(flag) {
-            System.out.println("Enter the account id");
-            int accountId = Integer.parseInt(sc.nextLine());
+                    for (BankAccount ba : saList) {
+                        if (accountId == ba.getAccountId()) {
+                            System.out.println("Account had been found");
+                            System.out.println(ba);
+                            flag = false;
+                        }
+                    }
+                    if (flag) {
+                        System.out.println("Account didn't exist");
+                    }
+                }break;
+            } catch (NumberFormatException e) {
+                System.out.println("Not a number");
+            }
 
-            for (BankAccount ba : saList) {
-                if (accountId == ba.getAccountId()) {
-                    System.out.println("Account had been found");
-                    System.out.println(ba);
-                    flag = false;
-                }
-            }
-            if (flag) {
-                System.err.println("Account didn't exist");
-            }
         }
     }
 

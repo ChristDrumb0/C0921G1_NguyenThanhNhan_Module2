@@ -9,17 +9,17 @@ public class ValidationRegex {
     Scanner sc = new Scanner(System.in);
     private static final String FACILITY_REGEX = "^(SV)(RO|VL|HO)\\d{4}$";
 
+    private static final String EMPLOYEE_REGEX = "^[A-Z]{2}\\d{4}$";
+
+    private static final String CUSTOMER_REGEX = "^(CUS)\\d{4}$";
+
     public boolean validateFacility(String regex) {
         return Pattern.matches(FACILITY_REGEX, regex);
     }
 
-    private static final String EMPLOYEE_REGEX = "^[A-Z]{2}\\d{4}$";
-
     public boolean validateEmployee(String regex) {
         return Pattern.matches(EMPLOYEE_REGEX, regex);
     }
-
-    private static final String CUSTOMER_REGEX = "^(CUS)\\d{4}$";
 
     public boolean validateCustomer(String regex) {
         return Pattern.matches(CUSTOMER_REGEX, regex);
